@@ -1,0 +1,105 @@
+*{
+  box-sizing: border-box;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  padding: 15px 5px 10px;
+  border: 1px solid red;
+}
+
+.login-container{
+  width: 100%;
+  text-align: center;
+}
+
+.login-box{
+  width: 600px;
+  height: 500px;
+  border: 1px solid black;
+  /* background-color: aquamarine; */
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.login-title{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sub-title{
+  margin-bottom: 50px;
+}
+
+.sub-join{
+  margin-top: 50px;
+  display: flex;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  padding: 15px 5px 10px;
+  border: 1px solid red;
+}
+
+.login-input{
+  width: 400px;
+  margin: auto;
+}
+
+.loginBtn{
+  margin-top: 50px;
+  width: 100px;
+}
+
+strong{
+  color: #137d34;
+}
+
+.login-btn{
+  margin-top: 30px;
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: #137d34;
+}
+
+li{
+  display: inline-block;
+  vertical-align: middle;
+  
+}
+
+span{
+  font-size: 20px;
+}
+  
+.joinbox{
+  margin-top: 30px;
+}
+
+.join-btn{
+  text-decoration : none;
+}
+
+
+.findbox{
+  margin-top: 10px;
+}
+
+.find-btn{
+  text-decoration : none;
+}
+
+
+

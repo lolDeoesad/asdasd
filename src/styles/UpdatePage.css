@@ -1,0 +1,59 @@
+*{
+  box-sizing: border-box;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  padding: 15px 5px 10px;
+  border: 1px solid red;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  padding: 15px 5px 10px;
+  border: 1px solid red;
+}
+
+.update-container{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.update-mainbox{
+  width: 900px;
+  height: 800px;
+  /* border: 1px solid black; */
+  /* background-color: aquamarine; */
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.username-box, .usermail-box{
+  margin: auto;
+}
+
+.update-title{
+  margin-bottom: 20px;
+}
+
+.username-box{
+  text-align: center;
+}
+
+
+hr{
+  width: 500px;
+  margin: auto ;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
