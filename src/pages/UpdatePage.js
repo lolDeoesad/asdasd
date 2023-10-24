@@ -1,15 +1,50 @@
 import '../styles/UpdatePage.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import DaumPostcode from 'react-daum-postcode';
+// import DaumPostcode from 'react-daum-postcode';
 import React, { useState } from 'react';
-import DaumMap from '../components/DaumMap';
-import { useDaumPostcodePopup } from 'react-daum-postcode';
+// import DaumMap from '../components/DaumMap';
+// import { useDaumPostcodePopup } from 'react-daum-postcode';
 
 
 function UpdatePage() {
 
+  const[password, setPassword] = useState(''); //비밀번호 상태
+  const[pwConfirm, setPwConfirm] = useState('');//비밀번호 확인상태
+  const[pwError, setPwError] = useState(''); // 비번 에러메시지
 
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //비밀번호 정규식
+
+  const handlePwChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    
+    if(!passwordRegex.test(newPassword)) {
+      setPwError('비밀번호는 영문과 숫자를 포함하여 최소 8자 이상이어야 합니다.');
+    }else if (newPassword !== pwConfirm){
+      setPwError('비밀번호가 일치하지 않습니다.');
+    }else {
+      setPwError('');
+    }
+  };
+
+  const handlePwConfirmchange = (e) => {
+    const newConfirmPw = e.target.value;
+    setPwConfirm(newConfirmPw);
+    
+    if(newConfirmPw !== password){
+      setPwError('비밀번호가 일치하지 않습니다.');
+    }else{
+      setPwError('');
+    }
+  };
+
+  
+  const handleSave = () => {
+    if(pwError === ''){
+
+    }
+  };
 
   return (
     <div className='main-update'>
@@ -20,38 +55,27 @@ function UpdatePage() {
         <div className='update-mainbox'>
           <h2 className='update-title'>회원정보수정</h2><hr />
 
-          {/* <h4>기본정보</h4> */}
-          {/* <div className='username-upt'>
-            <input type='text' placeholder='이름을 입력해주세요' style={{width : "300px", height: "50px", borderRadius: "10px", marginBottom: "3px"}}/><br/>
-            <input type='text' placeholder='주민등록번호' style={{width : "300px", height: "50px", borderRadius: "10px", marginBottom: "3px"}} readOnly/><br/>
-            <input type='text' placeholder='회원번호' style={{width : "300px", height: "50px", borderRadius: "10px", marginBottom: "3px"}} readOnly/><br/>
-            <input type='text' placeholder='이메일 주소를 입력해주세요' style={{width : "300px", height: "50px", borderRadius: "10px", marginBottom: "3px"}}/><br/>
-            <input type='text' placeholder='휴대폰번호를 입력해주세요' style={{width : "300px", height: "50px", borderRadius: "10px", marginBottom: "3px"}}/>
-          </div> */}
-
-          {/* <div class="form-text" id="basic-addon4">주민번호: </div>
-          <div class="form-text" id="basic-addon4">회원번호: </div> */}
-
-
-
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">이름</span>
             <input type="text" class="form-control" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">주민번호</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly />
-          </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">비밀번호</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"  />
+            <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwChange} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"  />
+            <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwConfirmchange}  />
+          </div>
+
+          {pwError && <div style={{ color: 'red', marginBottom: '5px', }}>{pwError}</div>}
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">주민번호</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
@@ -126,9 +150,9 @@ function UpdatePage() {
             <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
 
-          <button type="button" class="btn btn-light" href="#">취소</button>
+          <button type="button" class="btn btn-light" href="/mypage">취소</button>
           {/* <button type="button" class="btn btn-primary" href="/mypage">저장</button> */}
-          <a className="btn btn-primary" href="/mypage">저장</a>
+          <a className="btn btn-primary" href="/mypage" onClick={handleSave}>저장</a>
 
         </div>
       </div>

@@ -24,16 +24,26 @@
 
 .mypage-container{
   width: 100%;
-  height: 100%;
+  height: 800px;
   text-align: center;
 }
 
-.mypage-mainbox{
+/* .mypage-mainbox{
   width: 900px;
   height: 800px;
-  /* border: 1px solid black; */
-  /* background-color: aquamarine; */
+  border: 1px solid black; 
+   background-color: aquamarine;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 100px;
+} */
+
+.bannerbox{
+  display: flex;
+  alignItems: center;
+  margin: 5%;
+}
+
+.userPagebox{
+  background-color: yellow;
 }
