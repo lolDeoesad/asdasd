@@ -45,6 +45,16 @@ function UpdatePage() {
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">비밀번호</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"  />
+          </div>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"  />
+          </div>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">회원번호</span>
             <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly />
           </div>
@@ -61,44 +71,68 @@ function UpdatePage() {
             </div>
           </div>
 
-          <div>
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-              <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
-              <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
+            <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+          <li style={{ marginBottom: "5px", color: "red" }}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">국적</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly />
+          </div>
+
+          <hr />
+
+
+          <h3 className='update-title'>자택주소/전화번호</h3>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">주소</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
+            <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
+            <div class="form-check" style={{ marginLeft: "10px" }}>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+              <label class="form-check-label" for="flexCheckChecked">
+                번호 없음
+              </label>
             </div>
-            <li style={{marginBottom: "5px", color: "red"}}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li>
+          </div>
+          <br />
 
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-              <span class="input-group-text" id="basic-addon1">국적</span>
-              <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly />
-            </div>
+          <hr />
+          <h3 className='update-title'>직장정보</h3>
 
-            <hr />
-
-            <h3 className='update-title'>자택주소/전화번호</h3>
-
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">직장명</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-              <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
-              <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
-            </div>
-          <br />
-          <div class="form-check" style={{border: "auto"}}>
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-            <label class="form-check-label" for="flexCheckChecked">
-              번호 없음
-            </label>
+            <span class="input-group-text" id="basic-addon1">부서명</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">직장주소</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span class="input-group-text" id="basic-addon1">직장연락처</span>
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+
+          <button type="button" class="btn btn-light" href="#">취소</button>
+          {/* <button type="button" class="btn btn-primary" href="/mypage">저장</button> */}
+          <a className="btn btn-primary" href="/mypage">저장</a>
+
         </div>
-        <hr />
-        <h3 className='update-title'>직장정보</h3>
-
-
-
-        <button type="button" class="btn btn-light" href="#">취소</button>
-        <button type="button" class="btn btn-primary" href="/mypage">저장</button>
-
       </div>
+
       <div className='footer-container'>
 
       </div>
