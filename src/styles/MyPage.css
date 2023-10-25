@@ -9,7 +9,7 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .footer-container{
@@ -19,31 +19,57 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .mypage-container{
   width: 100%;
   height: 800px;
   text-align: center;
+  
 }
 
-/* .mypage-mainbox{
-  width: 900px;
-  height: 800px;
-  border: 1px solid black; 
-   background-color: aquamarine;
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-} */
+.mypage-mainbox{
+  width: 700px;
+  
+  display: inline-block;
+}
 
 .bannerbox{
-  display: flex;
-  alignItems: center;
-  margin: 5%;
+  width: 700px;
 }
 
 .userPagebox{
-  background-color: yellow;
+  /* border: 1px solid blue; */
+  float: left;
+  
+  width: 300px;
+  height: 600px;
+}
+
+.imgsecurity{
+  width: 700px;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.card{
+  text-align: right;
+  background-clip:padding-box;
+}
+
+.menubox{
+  
+  
+  height: 410px;
+}
+
+.submenu{
+  text-align: right;
+
+}
+
+.list-group-item{
+  font-size: 18px;
+  font : #137d34;
 }
