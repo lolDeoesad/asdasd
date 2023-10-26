@@ -1,0 +1,21 @@
+.main {
+  margin: auto;
+}
+
+.open {
+  text-align: center;
+}
+
+.content {
+  width: 30%;
+  height: 20%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.content h5 {
+  height: 50px;
+  margin-top: 30px;
+}
+
+
