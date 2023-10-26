@@ -77,7 +77,7 @@ function UpdatePage() {
     // if(pwError === ''){
     // }
     // 서버에 수정 입력한 데이터를 보내주면서 DB의 내용을 수정하도록 요청
-    AxiosInstance.put('/user', user)
+    AxiosInstance.put('/mypage', user)
       .then(response => {
         alert(response.data);
         navigate('/');

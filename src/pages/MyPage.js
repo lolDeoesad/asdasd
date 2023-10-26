@@ -1,7 +1,21 @@
 import '../styles/MyPage.css';
 import React from 'react';
+import { useState } from 'react';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import AccountCard from '../components/AccountCard';
 
 const MyPage = () => {
+
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: '이젠자유예금', value: '1' },
+    { name: '이젠자유예금', value: '2' },
+    { name: '이젠자유예금', value: '3' },
+  ];
+
   return (
     <div className='mypage'>
       <div className='header-container'>
@@ -9,13 +23,28 @@ const MyPage = () => {
       </div>
 
       <div className='mypage-container'>
-        <div className='d-flex justify-content-center' style={{ marginTop: "5%" }}>
-          <div className='bannerbox' style={{ marginRight: "5%" }}>
-            <img className='imgsecurity' src={process.env.PUBLIC_URL + '/img/securitybn.png'} alt="securitybn" />
+        <div className='mypageBox1'>
+          <div className='d-flex justify-content-center' style={{ marginTop: "5%", height: "300px" }}>
+            <div className='bannerbox' style={{ marginRight: "5%" }}>
+              <img className='imgsecurity' src={process.env.PUBLIC_URL + '/img/securitybn.png'} alt="securitybn" />
+            </div>
           </div>
-                <h3>쉽고 편리한 거래를 위한 추천서비스</h3>
-                <h2><strong>고객님의 바쁜 업무를 위해 준비했어요!</strong></h2>
+          <div className='accountBox'>
+            <h4>입출금 계좌현황</h4>
+            <p>전계좌조회 순서대로 원화 출금계좌 상위 6개만 제공됩니다. <a>계좌순서변경</a></p><br />
+            <div className='d-flex'>
+              <AccountCard/>
+              <AccountCard/>
+              <AccountCard/>
+              
+              
+            </div>
 
+          </div>
+        </div>
+
+
+        <div className='mypageBox2'>
           <div className='userPagebox'  >
             <div class="card" >
               <div class="card-body">
@@ -26,25 +55,55 @@ const MyPage = () => {
                 <a href="/main" class="card-link">로그아웃</a>
               </div>
             </div>
-            <div className='menubox' style={{ marginTop: "10%", borderRadius: "10px"}}>
-            <br /><h4><strong className=''>주요메뉴</strong></h4><br/>
+            <div className='menubox' style={{ marginTop: "10%", borderRadius: "10px" }}>
+              <br /><h4><strong className=''>주요메뉴</strong></h4><br />
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="#">전체계좌조회</a></li>
                 <li class="list-group-item"><a href="#">계좌이체</a></li>
                 <li class="list-group-item"><a href="#">최근 거래내역</a></li>
-                {/* <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li> */}
+
               </ul>
 
             </div>
           </div>
+        </div>
+        {/* 
+
+
+          
+        <div className='accountbox'>
+          <h4>입출금 계좌현황</h4>
+          <p>전계좌조회 순서대로 원화 출금계좌 상위 6개만 제공됩니다. <a>계좌순서변경</a></p>
+
+
+
 
         </div>
+        <div className='accountBtn'>
+          <ButtonGroup>
+            {radios.map((radio, idx) => (
+              <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+                name="radio"
+                value={radio.value}
+                checked={radioValue === radio.value}
+                onChange={(e) => setRadioValue(e.currentTarget.value)}
+              >
+                {radio.name}
+              </ToggleButton>
+            ))}
+          </ButtonGroup>
+        </div> */}
 
 
 
-
-
+        {/* <div>
+                  <h3>쉽고 편리한 거래를 위한 추천서비스</h3>
+                  <h2><strong>고객님의 바쁜 업무를 위해 준비했어요!</strong></h2>
+                </div> */}
 
 
 
