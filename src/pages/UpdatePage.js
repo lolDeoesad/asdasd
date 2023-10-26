@@ -5,55 +5,55 @@ import React, { useState } from 'react';
 import DaumMap from '../components/DaumMap';
 import AxiosInstance from '../utils/AxiosInstance';
 import { useNavigate } from 'react-router-dom';
-
+import Form from 'react-bootstrap/Form';
 
 function UpdatePage() {
   const [address, setAddress] = useState('');
   const [jobAddress, setJobAddress] = useState('');
-  const[password, setPassword] = useState(''); //비밀번호 상태
-  const[pwConfirm, setPwConfirm] = useState('');//비밀번호 확인상태
-  const[pwError, setPwError] = useState(''); // 비번 에러메시지
+  const [password, setPassword] = useState(''); //비밀번호 상태
+  const [pwConfirm, setPwConfirm] = useState('');//비밀번호 확인상태
+  const [pwError, setPwError] = useState(''); // 비번 에러메시지
 
   const [addressDetail, setAddressDetail] = useState('');
   const [fullAddress, setFullAddress] = useState('');
   const navigate = useNavigate();
 
   const [user, setUser] = useState({  //인풋으로 입력받은 값 저장할 유저정보 스테이트
-    username : '',
-    fname : '',
-    password : '',
-    idNo : '',
-    email : '',
-    phone : '',
-    country : '',
-    address : '',
-    job : '',
-    agree : ''
+    username: '',
+    fname: '',
+    password: '',
+    idNo: '',
+    email: '',
+    phone: '',
+    country: '',
+    address: '',
+    job: '',
+    agree: ''
   });
 
   const changeHandler = (e) => {    // 입력 받은 값들 뽑아서 서버에 보내줄거임 
     setUser({
       ...user,
-      [e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
-  
+
   const changeHandler2 = (e) => {    // 입력 받은 값들 뽑아서 서버에 보내줄거임 
     setAddressDetail(e.target.value);
     setFullAddress(address + '' + addressDetail);
   }
 
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //비밀번호 정규식
-  
+
   const handlePwChange = (e) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
-    
-    if(!passwordRegex.test(newPassword)) {
+
+    if (!passwordRegex.test(newPassword)) {
       setPwError('비밀번호는 영문과 숫자를 포함하여 최소 8자 이상이어야 합니다.');
-    }else if (newPassword !== pwConfirm){
+    } else if (newPassword !== pwConfirm) {
       setPwError('비밀번호가 일치하지 않습니다.');
-    }else {
+    } else {
       setPwError('');
     }
     changeHandler(e);
@@ -62,16 +62,16 @@ function UpdatePage() {
   const handlePwConfirmchange = (e) => {
     const newConfirmPw = e.target.value;
     setPwConfirm(newConfirmPw);
-    
-    if(newConfirmPw !== password){
+
+    if (newConfirmPw !== password) {
       setPwError('비밀번호가 일치하지 않습니다.');
-    }else{
+    } else {
       setPwError('');
     }
     changeHandler(e);
   };
 
-  
+
   const handleSave = (e) => {
     e.preventDefault();
     // if(pwError === ''){
@@ -99,9 +99,9 @@ function UpdatePage() {
             <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} />
           </div>
 
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">이름</span>
-            <input type="text" class="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1"  onChange={changeHandler} />
+            <input type="text" class="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
           </div>
 
 
@@ -130,12 +130,14 @@ function UpdatePage() {
           <div class="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} />
             <div class="input-group-text" id="basic-addon2">
-              <DropdownButton id="dropdown-basic-button btn-success" title="도메인">
-                <Dropdown.Item href="#/action-1">naver.com</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">google.com</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">daum.net</Dropdown.Item>
-                <Dropdown.Item href="#/action-4">kakao.com</Dropdown.Item>
-              </DropdownButton>
+
+              <Form.Select aria-label="Default select example">
+                <option>도메인</option>
+                <option value="1">naver.com</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </Form.Select>
+
             </div>
           </div>
 
@@ -156,17 +158,17 @@ function UpdatePage() {
 
           <h3 className='update-title'>자택주소/전화번호</h3>
 
-      
+
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <DaumMap setAddress={setAddress} /> 
+            <DaumMap setAddress={setAddress} />
             <input type="text" class="form-control" placeholder="주소" name="address" value={address} aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
-            </div>
-            
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          </div>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
             <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
           </div>
-          
+
           {/* <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
             <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
@@ -191,13 +193,13 @@ function UpdatePage() {
             <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <DaumMap setAddress={setJobAddress} /> 
+            <DaumMap setAddress={setJobAddress} />
             <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1" />
-            </div>
-            
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          </div>
+
+          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1"  />
+            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">직장연락처</span>

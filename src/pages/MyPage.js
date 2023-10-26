@@ -26,7 +26,7 @@ const MyPage = () => {
         <div className='mypageBox1'>
           <div className='d-flex justify-content-center' style={{ marginTop: "5%", height: "300px" }}>
             <div className='bannerbox' style={{ marginRight: "5%" }}>
-              <img className='imgsecurity' src={process.env.PUBLIC_URL + '/img/securitybn.png'} alt="securitybn" />
+              <img className='imgezenLife' src={process.env.PUBLIC_URL + '/img/ezenLife.png'} alt="ezenLife" />
             </div>
           </div>
           <div className='accountBox'>
@@ -36,11 +36,14 @@ const MyPage = () => {
               <AccountCard/>
               <AccountCard/>
               <AccountCard/>
-              
-              
+            </div>
+          </div>
+            <div className='history' >
+             <br/> <strong >최근 거래내역</strong>
             </div>
 
-          </div>
+              
+
         </div>
 
 
