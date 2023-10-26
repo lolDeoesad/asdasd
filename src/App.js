@@ -4,6 +4,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import UpdatePage from './pages/UpdatePage';
 import MyPage from './pages/MyPage';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<div>인덱스</div>} />
         {/* 페이지 추가 영역 */}
-
+        <Route path='/signup' element={<Signup/>} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/update' element={<UpdatePage />} />
         <Route path='/mypage' element={<MyPage />} />
