@@ -5,12 +5,13 @@ import LoginPage from './pages/LoginPage';
 import UpdatePage from './pages/UpdatePage';
 import MyPage from './pages/MyPage';
 import Signup from './components/Signup';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
 
-      {/* <Header /> */}
+          <Header />
           <Link to={'/signup'}>회원가입 </Link>
           <Link to={'/login'}>로그인 </Link>
           <Link to={'/update'}>정보수정 </Link>

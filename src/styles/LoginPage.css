@@ -2,15 +2,7 @@
   box-sizing: border-box;
 }
 
-.header-container{
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 150px;
-  padding: 15px 5px 10px;
-  border: 1px solid red;
-}
+
 
 .login-container{
   width: 100%;
@@ -48,7 +40,8 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  border-style: solid none none none;
+  border-bottom-color: #137d34;
 }
 
 .login-input{
@@ -74,7 +67,7 @@ strong{
   background-color: #137d34;
 }
 
-li{
+.member-sign li{
   display: inline-block;
   vertical-align: middle;
   

@@ -3,7 +3,7 @@
   /* position: relative; */
 }
 
-.header-container{
+/* .header-container{
   display: flex;
   justify-content: center;
   position: relative;
@@ -11,7 +11,7 @@
   height: 150px;
   padding: 15px 5px 10px;
   border: 1px solid red;
-}
+} */
 
 .footer-container{
   display: flex;
@@ -20,10 +20,12 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  border-style: none none solid none;
+  border-bottom-color: #137d34;
 }
 
 .mypage-container{
+  /* position: sticky; */
   width: 100%;
   height: auto;
   display: flex;
@@ -37,7 +39,7 @@
   width: 1441px;
   height: auto;
   margin-left: 150px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
     
 }
 
@@ -45,7 +47,7 @@
   width: 800px;
   height: 800px;
   margin-right: 150px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
 }
 
@@ -63,9 +65,10 @@
 }
 
 .menubox{
-  
-  
+  border: 1px solid black;
+  border-radius: 20px;
   height: 410px;
+  
 }
 
 .submenu{

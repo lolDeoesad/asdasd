@@ -1,11 +1,12 @@
 import '../styles/UpdatePage.css';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
 import React, { useState } from 'react';
 import DaumMap from '../components/DaumMap';
 import AxiosInstance from '../utils/AxiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import Header from '../components/Header';
 
 function UpdatePage() {
   const [address, setAddress] = useState('');
@@ -88,7 +89,8 @@ function UpdatePage() {
   return (
     <div className='main-update'>
       <div className='header-container'>
-        <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
+      {/* <Header/> */}
+        {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
       </div>
       <div className='update-container'>
         <div className='update-mainbox'>

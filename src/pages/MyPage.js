@@ -1,25 +1,20 @@
 import '../styles/MyPage.css';
 import React from 'react';
 import { useState } from 'react';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ToggleButton from 'react-bootstrap/ToggleButton';
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import ToggleButton from 'react-bootstrap/ToggleButton';
 import AccountCard from '../components/AccountCard';
+import Header from '../components/Header';
 
 const MyPage = () => {
 
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState('1');
-
-  const radios = [
-    { name: '이젠자유예금', value: '1' },
-    { name: '이젠자유예금', value: '2' },
-    { name: '이젠자유예금', value: '3' },
-  ];
+ 
 
   return (
     <div className='mypage'>
       <div className='header-container'>
-        <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
+        {/* <Header/> */}
+        {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
       </div>
 
       <div className='mypage-container'>

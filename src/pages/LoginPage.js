@@ -1,3 +1,4 @@
+import Header from '../components/Header';
 import '../styles/LoginPage.css';
 import React from 'react';
 
@@ -7,8 +8,8 @@ const LoginPage = () => {
     <div className='main-container'>
 
       <div className='header-container'>
-        <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
-        <h1>공사중</h1>
+
+        
       </div>
       <div className='login-container'>
         <div className='login-box'>

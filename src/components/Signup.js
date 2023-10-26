@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DaumMap from '../components/DaumMap';
 import Form from 'react-bootstrap/Form';
+import Header from "./Header";
 
 function Signup() {
 
@@ -26,8 +27,8 @@ function Signup() {
 
   const [address, setAddress] = useState('');
   const [jobAddress, setJobAddress] = useState('');
-  const [addressDetail, setAddressDetail] = useState('');
-  const [fullAddress, setFullAddress] = useState('');
+  // const [addressDetail, setAddressDetail] = useState('');
+  // const [fullAddress, setFullAddress] = useState('');
   const [isId, setIsId] = useState(null);  // 정규식 성공 실패 구분하는 스테이트  
   const [isFname, setIsFname] = useState(null);
   const [isPw, setIsPw] = useState(null);
@@ -35,6 +36,9 @@ function Signup() {
   const [isEmail, setIsEmail] = useState(null);
   const [isTel, setIsTel] = useState(null);
   const [isChecked, setIsChecked] = useState(null);
+  const [password, setPassword] = useState(''); //비밀번호 상태
+  const [pwConfirm, setPwConfirm] = useState('');//비밀번호 확인상태
+  const [pwError, setPwError] = useState(''); // 비번 에러메시지
 
 
   const [userInfo, setUserInfo] = useState({  //인풋으로 입력받은 값 저장할 유저정보 스테이트
@@ -149,6 +153,22 @@ function Signup() {
 
   }
 
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //비밀번호 재확인 정규식
+
+  const handlePwChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+
+    if (!passwordRegex.test(newPassword)) {
+      setPwError('비밀번호는 영문과 숫자를 포함하여 최소 8자 이상이어야 합니다.');
+    } else if (newPassword !== pwConfirm) {
+      setPwError('비밀번호가 일치하지 않습니다.');
+    } else {
+      setPwError('');
+    }
+    changeHandler(e);
+  };
+
 
   const phRegEx = (e) => {              // 숫자 외 입력안되고 하이픈 자동생성되는 전화번호 정규식 
     e.target.value = e.target.value
@@ -171,6 +191,18 @@ function Signup() {
     setIsTel(false);
   }
 
+  const handlePwConfirmchange = (e) => {
+    const newConfirmPw = e.target.value;
+    setPwConfirm(newConfirmPw);
+
+    if (newConfirmPw !== password) {
+      setPwError('비밀번호가 일치하지 않습니다.');
+    } else {
+      setPwError('');
+    }
+    changeHandler(e);
+  };
+
   const checked = (e) => {
     if (!e.target.checked) {
       setIsChecked(true)
@@ -187,7 +219,8 @@ function Signup() {
   return (
     <div className="Signup">
       <div className="header-container">
-      <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
+      {/* <Header/> */}
+      {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
       </div>
       <div className="Signup-container">
       <h2 className='update-title'>회원가입</h2><hr />
@@ -197,7 +230,7 @@ function Signup() {
           <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={idRegEX} />
         </div>
         {isId == null ? " " : isId ? <span id="error">{error[0]}</span> : <span id="proper">{proper[0]}</span>} {/* 처음부터 문구 나와있는거 별로여서 삼항연산자 중첩사용함 가독성 안좋음 */}
-        {/* isId가 null 이냐? 물어봐서 (isId는 정규식 성공 실패 구분해줄 스테이트) trye 면 공백 false 면 삼항연산자 한번 더 물어봤음  */}
+        {/* isId가 null 이냐? 물어봐서 (isId는 정규식 성공 실패 구분해줄 스테이트) true 면 공백 false 면 삼항연산자 한번 더 물어봤음  */}
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">이름</span>
@@ -215,7 +248,7 @@ function Signup() {
         {/* 밑에꺼는 내코드로 진행 */}
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
-          <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+          <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwConfirmchange} />
         </div>
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
@@ -249,12 +282,14 @@ function Signup() {
         {isTel == null ? " " : isTel ? <span id="error">{error[5]}</span> : <span id="proper">{proper[5]}</span>}
 
 
-        국적을 선택하세요 : {" "}
-        <select name="country" onChange={changeHandler}>
-          <option value=" ">====선택====</option>
-          <option value="korean">내국인</option>
-          <option value="foreigner">외국인</option>
-        </select>
+        <div class="input-group-text username-box" id="basic-addon2" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+              <Form.Select aria-label="Default select example">
+                <option>국적을 선택하세요</option>
+                <option value="1">내국인</option>
+                <option value="2">외국인</option>
+              </Form.Select>
+            </div>
+       
 
         <hr/>
 
@@ -276,15 +311,15 @@ function Signup() {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">직장명</span>
-            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">부서명</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler}/>
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <DaumMap setAddress={setJobAddress} /> 
-            <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1"  onChange={changeHandler}/>
             </div>
             
             <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
@@ -293,15 +328,12 @@ function Signup() {
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">직장연락처</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler}/>
           </div>
 
 
 
-        <input type="text" name="job" placeholder="직장정보" onChange={changeHandler}></input>
-        <br /><br />
-        {/* <input type="text" name="id" onChange={changeHandler}></input> */}
-        <br></br>
+       
         <Accordion defaultActiveKey="0" style={{ paddingLeft: 300, paddingRight: 300 }}>
           <Accordion.Item eventKey="0" >
             <Accordion.Header >약관</Accordion.Header>
@@ -314,7 +346,9 @@ function Signup() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <button disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-success" disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
           axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
             .then(response => {
               alert(response.data);
