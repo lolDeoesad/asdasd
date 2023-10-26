@@ -26,7 +26,7 @@ const LoginPage = () => {
               <input type='password' className='form-control' id='floatingPassword' placeholder='Password' />
               <label htmlFor='floatingPassword'>비밀번호</label>
             </div>
-            <button type="submit" class="login-btn btn-primary">로그인</button>
+            <button type="submit" class="login-btn btn-primary" href="/mypage">로그인</button>
             <div className='member-sign'>
               <ul>
                 <li className='joinbox'>

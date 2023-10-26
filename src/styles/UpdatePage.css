@@ -9,7 +9,8 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border: none;
 }
 
 .footer-container{
@@ -19,7 +20,8 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border: none;
 }
 
 .update-container{
