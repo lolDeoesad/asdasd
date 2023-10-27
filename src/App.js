@@ -6,22 +6,23 @@ import UpdatePage from './pages/UpdatePage';
 import MyPage from './pages/MyPage';
 import Signup from './components/Signup';
 import Header from './components/Header';
-import AgreePage from './pages/AgreePage';
+// import AgreePage from './pages/AgreePage';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
 
           <Header />
-          <Link to={'/agree'}>회원가입 </Link>
-          <Link to={'/signup'}>회원가입1 </Link>
+          {/* <Link to={'/agree'}>회원가입 </Link> */}
+          <Link to={'/signup'}>회원가입 </Link>
           <Link to={'/login'}>로그인 </Link>
           <Link to={'/update'}>정보수정 </Link>
           <Link to={'/mypage'}>마이페이지 </Link>
       <Routes>
         <Route path='/' element={<div>인덱스</div>} />
         {/* 페이지 추가 영역 */}
-        <Route path='/agree' element={<AgreePage/>} />
+        {/* <Route path='/agree' element={<AgreePage/>} /> */}
         <Route path='/signup' element={<Signup/>} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/update' element={<UpdatePage />} />
@@ -34,7 +35,7 @@ function App() {
         <Route path='*' element={<div>인덱스</div>} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
   );

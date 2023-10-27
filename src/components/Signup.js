@@ -218,11 +218,11 @@ function Signup() {
 
   return (
     <div className="Signup">
-      <div className="header-container">
-        {/* <Header/> */}
-        {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
-      </div>
-      <div className="Signup-container">
+      {/* <div className="header-container">
+        <Header/>
+        <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
+      </div> */}
+      <div className="Signup-container" >
         <h2 className='update-title'>회원가입</h2><hr />
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
@@ -334,19 +334,20 @@ function Signup() {
 
 
 
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <Accordion defaultActiveKey="0" style={{  }}>
+            <Accordion.Item eventKey="0" >
+              <Accordion.Header >약관</Accordion.Header>
+              <Accordion.Body>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                <input name="agree" type="checkbox" onChange={changeHandler} onClick={checked} value="y" /><br />
+                <span>※약관은 필수로 동의해 주셔야 합니다※</span>
 
-        <Accordion defaultActiveKey="0" style={{ paddingLeft: 300, paddingRight: 300 }}>
-          <Accordion.Item eventKey="0" >
-            <Accordion.Header >약관</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              <input name="agree" type="checkbox" onChange={changeHandler} onClick={checked} value="y" /><br />
-              <span>※약관은 필수로 동의해 주셔야 합니다※</span>
-
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
         <br />
         <br />
         <button type="submit" class="btn btn-success" disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {

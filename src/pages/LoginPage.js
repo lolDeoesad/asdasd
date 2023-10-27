@@ -32,19 +32,13 @@ const LoginPage = () => {
               <ul>
                 <li className='joinbox'>
                   <span>아직 가입 전이신가요?</span>
-                  <a href='/join' className='join-btn btn-primary' type='submit'>회원가입</a>
+                  <a href='/signup' className='join-btn btn-primary' type='submit'>회원가입</a>
                 </li>
                 <li className='findbox'>
                   <span>아이디, 비밀번호를 잊으셨나요?</span>
                   <a href='/find' className='find-btn btn-primary' type='submit'>ID/PW 찾기</a>
                 </li>
-                <li>
-                  <small>
-                    이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을
-                    확인합니다.
-                    <a href="#">자세히 알아보기.</a>
-                  </small>
-                </li>
+                
               </ul>
 
 
@@ -57,7 +51,7 @@ const LoginPage = () => {
         </div>
       </div>
       <div className='footer-container'>
-        <h1>공사중</h1>
+        
       </div>
 
     </div>

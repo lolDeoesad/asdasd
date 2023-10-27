@@ -24,10 +24,10 @@ const Header = () => {
           <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">공과금</Nav.Link>
           <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">외환</Nav.Link>
 
-          <div className='nav-join' style={{border: "1px solid red", float: "right"}}>
-          <a href='/signup' className='btn btn-primary'>회원가입</a>
+          <div className='nav-join' style={{float: "right"}}>
+          <a href='/signup' className='btn btn-success'>회원가입</a>
           &nbsp;&nbsp;
-          <a href='/login' className='btn btn-primary'>로그인</a>
+          <a href='/login' className='btn btn-success'>로그인</a>
           </div>
         </div>
       </div>
