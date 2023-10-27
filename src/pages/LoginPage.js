@@ -9,7 +9,7 @@ const LoginPage = () => {
 
       <div className='header-container'>
 
-        
+
       </div>
       <div className='login-container'>
         <div className='login-box'>
@@ -37,6 +37,13 @@ const LoginPage = () => {
                 <li className='findbox'>
                   <span>아이디, 비밀번호를 잊으셨나요?</span>
                   <a href='/find' className='find-btn btn-primary' type='submit'>ID/PW 찾기</a>
+                </li>
+                <li>
+                  <small>
+                    이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을
+                    확인합니다.
+                    <a href="#">자세히 알아보기.</a>
+                  </small>
                 </li>
               </ul>
 

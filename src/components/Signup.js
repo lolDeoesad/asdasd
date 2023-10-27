@@ -13,7 +13,7 @@ function Signup() {
     '아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.',
     '이름은 한글 혹은 영문으로 2자리 이상 20자리 이하로 입력해주세요',
     '비밀번호는 영문 숫자 합쳐서 8자리 이상 20자리 이하로 입력해주세요.',
-    '주민번호 형식에 맞게 입력해주세요',
+    '',
     '이메일 형식에 맞게 입력해주세요',
     '전화번호 형식에 맞게 입력해주세요']);
   const [proper, setProper] = useState([  // 정규식 성공하면 띄어줄 스테이트  
@@ -219,11 +219,11 @@ function Signup() {
   return (
     <div className="Signup">
       <div className="header-container">
-      {/* <Header/> */}
-      {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
+        {/* <Header/> */}
+        {/* <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" /> */}
       </div>
       <div className="Signup-container">
-      <h2 className='update-title'>회원가입</h2><hr />
+        <h2 className='update-title'>회원가입</h2><hr />
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">아이디</span>
@@ -250,6 +250,7 @@ function Signup() {
           <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
           <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwConfirmchange} />
         </div>
+        {pwError && <div style={{ color: 'red', marginBottom: '5px', }}>{pwError}</div>}
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">주민번호</span>
@@ -258,22 +259,22 @@ function Signup() {
         {isIdNo == null ? " " : isIdNo ? <span id="error">{error[3]}</span> : <span id="proper">{proper[3]}</span>}
 
         <div class="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} onBlur={eRegEX} />
-            <div class="input-group-text" id="basic-addon2">
-              <Form.Select aria-label="Default select example">
-                <option>도메인</option>
-                <option value="1">naver.com</option>
-                <option value="2">google.com</option>
-                <option value="3">kakao.com</option>
-                <option value="4">daum.net</option>
-              </Form.Select>
-            </div>
+          <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} onBlur={eRegEX} />
+          <div class="input-group-text" id="basic-addon2">
+            <Form.Select aria-label="Default select example">
+              <option>도메인</option>
+              <option value="1">naver.com</option>
+              <option value="2">google.com</option>
+              <option value="3">kakao.com</option>
+              <option value="4">daum.net</option>
+            </Form.Select>
           </div>
+        </div>
         {isEmail == null ? " " : isEmail ? <span id="error">{error[4]}</span> : <span id="proper">{proper[4]}</span>}
 
 
 
-        
+
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
@@ -283,15 +284,15 @@ function Signup() {
 
 
         <div class="input-group-text username-box" id="basic-addon2" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-              <Form.Select aria-label="Default select example">
-                <option>국적을 선택하세요</option>
-                <option value="1">내국인</option>
-                <option value="2">외국인</option>
-              </Form.Select>
-            </div>
-       
+          <Form.Select aria-label="Default select example">
+            <option>국적을 선택하세요</option>
+            <option value="1">내국인</option>
+            <option value="2">외국인</option>
+          </Form.Select>
+        </div>
 
-        <hr/>
+
+        <hr />
 
         <h3 className='update-title'>자택주소</h3>
 
@@ -305,35 +306,35 @@ function Signup() {
           <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
         </div>
 
-        <hr/>
+        <hr />
 
         <h3 className='update-title'>직장정보</h3>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">직장명</span>
-            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
-          </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">부서명</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler}/>
-          </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <DaumMap setAddress={setJobAddress} /> 
-            <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1"  onChange={changeHandler}/>
-            </div>
-            
-            <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1"  />
-          </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">직장연락처</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler}/>
-          </div>
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span class="input-group-text" id="basic-addon1">직장명</span>
+          <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+        </div>
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span class="input-group-text" id="basic-addon1">부서명</span>
+          <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+        </div>
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <DaumMap setAddress={setJobAddress} />
+          <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+        </div>
+
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
+          <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" />
+        </div>
+        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span class="input-group-text" id="basic-addon1">직장연락처</span>
+          <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+        </div>
 
 
 
-       
+
         <Accordion defaultActiveKey="0" style={{ paddingLeft: 300, paddingRight: 300 }}>
           <Accordion.Item eventKey="0" >
             <Accordion.Header >약관</Accordion.Header>
@@ -346,8 +347,8 @@ function Signup() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <button type="submit" class="btn btn-success" disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
           axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
             .then(response => {

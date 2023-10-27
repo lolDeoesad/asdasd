@@ -17,40 +17,6 @@
   /* position: fixed; */
 }
 
-.logo{
-  width: 150px;
-  height: 50px;
-  
-}
-
-.header-nav {
-  align-items: center;
-  cursor: pointer;
-  
-  margin-right: 50px;
-}
-
-.headers-nav ul {
-  list-style: none;
-}
-
-.headers-nav li {
-  float: left;
-  margin-right: 50px;
-  margin-top: 20px;
-}
-
-.header-nav {
-  height: 100px;
-  width: 50%;
-}
-
-
-.headers-nav .nav-join{
-  align-items: center;
-  display: flex;
-}
-
 .headers-box{
   background: white;
   font-size: 20px;
@@ -67,19 +33,53 @@
   
 }
 
-.headers-box, .headers-nav{
+.logo{
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  position: sticky;
+}
+
+.header-nav {
   align-items: center;
+  cursor: pointer;
+  
+  margin-right: 50px;
+}
+
+/* .headers-nav ul {
+  list-style: none;
+} */
+
+.nav-link {
+  /* margin-top: 20px; */
+  float: left;
+  margin-right: 50px;
+  font-size: 20px;
   display: flex;
+  position: sticky;
+}
+
+.header-nav {
+  height: 100px;
+  width: 50%;
+}
+
+.nav-join{
+  float: right;
+  position: sticky;
+}
+
+
+.headers-box, .headers-nav{
+  /* align-items: center; */
+  /* display: flex; */
   justify-content: center;
 }
 
-.nav-join .join {
-  background-color: #6a60a900;
-  border: 0;
-  margin: 0 18px 0 10px;
-}
 
-.nav-join button{
+
+/* .nav-join button{
   text-transform: none;
   border-radius: 0;
   height: 40px;
@@ -87,7 +87,7 @@
   border-radius: 10px;
   background: #137d34;
   font-family: 'Tilt Neon', sans-serif;
-}
+} */
 
 
 

@@ -1,7 +1,15 @@
+import { Nav } from 'react-bootstrap';
 import '../styles/Header.css';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import UpdatePage from '../pages/UpdatePage';
+import MyPage from '../pages/MyPage';
+import Signup from '../components/Signup';
 
 const Header = () => {
+
+  const navigate = useNavigate();
   return (
     <div className='headers-container'>
       <div className='headers-box'>
@@ -9,24 +17,20 @@ const Header = () => {
           <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
         </div>
         <div className='d-flex headers-nav'>
-          <ul>
-            <li class="list-group-item"><a href="#">조회</a></li>
-            <li class="list-group-item"><a href="#">이체</a></li>
-            <li class="list-group-item"><a href="#">공과금</a></li>
-            <li class="list-group-item"><a href="#">외환</a></li>
-            <li class="list-group-item"><a href="#">금융상품</a></li>
-            {/* <div className='menu'>조회</div>
-            <div>이체</div> 
-            <div>공과금</div> 
-            <div>외환</div> 
-            <div>금융상품</div>  */}
-          </ul>
+          {/* <ul> */}
+          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">조회</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">이체</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">금융상품</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">공과금</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">외환</Nav.Link>
+
+          <div className='nav-join' style={{border: "1px solid red", float: "right"}}>
+          <a href='/signup' className='btn btn-primary'>회원가입</a>
+          &nbsp;&nbsp;
+          <a href='/login' className='btn btn-primary'>로그인</a>
+          </div>
         </div>
       </div>
-      {/* <div className='nav-join'>
-        <button type='submit'>회원가입</button>
-        <button type='submit'>로그인</button>
-      </div> */}
     </div>
   )
 }
