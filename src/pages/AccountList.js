@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
 import axiosInstance from "../axiosinstance";
+import axios from "axios";
 
 function AccountList() {
   const {id} = useParams();
@@ -10,7 +11,8 @@ function AccountList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axiosInstance.get('/account')
+    // axiosInstance.get('/account')
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/account`)
       .then(response => {
         console.log(response.data);
         setAccountList(response.data);
@@ -21,7 +23,7 @@ function AccountList() {
 
   return (
     <div className="account">
-      <h1>계좌목록페이지</h1>
+      <h3>계좌목록</h3>
       <table>
         <thead>
           <tr>
@@ -57,7 +59,7 @@ function AccountList() {
           }
         </tbody>
       </table>
-      <Button onClick={() => {navigate('/open')}}>계좌개설신청</Button>
+      <Button onClick={() => {navigate('/open')}} style={{background : '#137d34'}}>계좌개설신청</Button>
     </div>
   )
 
