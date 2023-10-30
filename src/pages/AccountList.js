@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
-import axiosInstance from "../axiosinstance";
+import axiosInstance from "../utils/axiosInstance";
 
 function AccountList() {
   const {id} = useParams();

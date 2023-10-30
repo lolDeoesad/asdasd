@@ -174,10 +174,6 @@ function Signup() {
 
   }
 
-  const finalCheck = (e) => {
-  
-  }
-
   return(
     <div className="Signup">
       <p>여기에 로고 들어갈거임</p>
@@ -242,7 +238,8 @@ function Signup() {
       </Accordion.Item>
     </Accordion>
     <button disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
-      axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
+      // axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
+      axios.post(`http://localhost:8888/user`, userInfo)
       .then(response => {
         alert(response.data);
         navigate('/')

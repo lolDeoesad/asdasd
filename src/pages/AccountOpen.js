@@ -1,9 +1,9 @@
-import { Button, Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import '../styles/AccountOpen.css';
 import Accordion from 'react-bootstrap/Accordion';
-import axiosInstance from "../axiosinstance";
+import axiosInstance from "../utils/axiosInstance";
 
 function AccountOpen() {
 
@@ -13,7 +13,7 @@ function AccountOpen() {
     <div className="open">
 
       <div className="header">
-        <img onClick={() => {navigate('/')}} src={process.env.PUBLIC_URL + '/img/logo.png'} />
+        <img onClick={() => {navigate('/')}} src={process.env.PUBLIC_URL + '/img/logo.png'} alt="" />
       </div>
 
       <div className="main">
