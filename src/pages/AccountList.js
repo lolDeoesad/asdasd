@@ -1,27 +1,28 @@
-import { Nav } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
 import axiosInstance from "../axiosinstance";
 
 function AccountList() {
-  // const [AccountList, setAccountList] = useState();
+  const {id} = useParams();
+  const [AccountList, setAccountList] = useState();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   axiosInstance.get('/account')
-  //     .then(response => {
-  //       console.log(response.data);
-  //       setAccountList(response.data);
-  //     }).catch(error => {
-  //       console.log(error);
-  //     })
-  // }, [])
+  useEffect(() => {
+    axiosInstance.get('/account')
+      .then(response => {
+        console.log(response.data);
+        setAccountList(response.data);
+      }).catch(error => {
+        console.log(error);
+      })
+  }, [])
 
   return (
     <div className="account">
       <h1>계좌목록페이지</h1>
-      {/* <table>
+      <table>
         <thead>
           <tr>
             <th>계좌번호</th>
@@ -31,20 +32,32 @@ function AccountList() {
         </thead>
         <tbody>
           {
-            AccountList.map((account, i) => {
+           AccountList && AccountList.map((account, i) => {
               return (
                 <tr key={i}>
-                  <td>{account.id}</td>
+                  <td>
+                    <Link to={'/search'}>
+                      {account.id}
+                    </Link>
+                  </td>
                   <td>{account.balance}</td>
                   <td>{account.userid}</td>
+                  {/* <Button onClick={() => {
+                    axiosInstance.delete('/account', {params : {'id':account.id}})
+                    .then(response => { 
+                      alert(response.data);
+                      navigate('/account');
+                    }).catch(error => {
+                      console.log(error);
+                    })
+                  }}>계좌해지</Button> */}
                 </tr>
               )
             })
           }
         </tbody>
-      </table> */}
-      <Nav.Link onClick={() => {navigate('/search')}} style={{color: 'black'}}>단일계좌조회</Nav.Link>
-      <Nav.Link onClick={() => {navigate('/open')}} style={{color: 'black'}}>계좌개설신청</Nav.Link>
+      </table>
+      <Button onClick={() => {navigate('/open')}}>계좌개설신청</Button>
     </div>
   )
 
