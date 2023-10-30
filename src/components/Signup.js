@@ -234,7 +234,7 @@ function Signup() {
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">이름</span>
-          <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={fnRegEX} />
+          <input type="text" class="form-control" name="fname" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={fnRegEX} />
         </div>
         {isFname == null ? " " : isFname ? <span id="error">{error[1]}</span> : <span id="proper">{proper[1]}</span>}
 

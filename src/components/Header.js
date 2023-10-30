@@ -14,7 +14,7 @@ const Header = () => {
     <div className='headers-container'>
       <div className='headers-box'>
         <div className='logo'>
-          <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
+          <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" href="/main" />
         </div>
         <div className='d-flex headers-nav'>
           {/* <ul> */}
