@@ -5,10 +5,12 @@ import { useState } from 'react';
 // import ToggleButton from 'react-bootstrap/ToggleButton';
 import AccountCard from '../components/AccountCard';
 import Header from '../components/Header';
+import { useNavigate } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 const MyPage = () => {
+  const navigate = useNavigate();
 
- 
 
   return (
     <div className='mypage'>
@@ -28,16 +30,16 @@ const MyPage = () => {
             <h4>입출금 계좌현황</h4>
             <p>전계좌조회 순서대로 원화 출금계좌 상위 6개만 제공됩니다. <a>계좌순서변경</a></p><br />
             <div className='d-flex'>
-              <AccountCard/>
-              <AccountCard/>
-              <AccountCard/>
+              <AccountCard />
+              <AccountCard />
+              <AccountCard />
             </div>
           </div>
-            <div className='history' >
-             <br/> <strong >최근 거래내역</strong>
-            </div>
+          <div className='history' >
+            <br /> <strong >최근 거래내역</strong>
+          </div>
 
-              
+
 
         </div>
 
@@ -55,12 +57,21 @@ const MyPage = () => {
             </div>
             <div className='menubox' style={{ marginTop: "10%", borderRadius: "10px" }}>
               <br /><h4><strong className=''>주요메뉴</strong></h4><br />
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#">전체계좌조회</a></li>
-                <li class="list-group-item"><a href="#">계좌이체</a></li>
-                <li class="list-group-item"><a href="#">최근 거래내역</a></li>
+              {/* <ul class="list-group list-group-flush"> */}
 
-              </ul>
+              <Nav.Link onClick={() => { navigate('/account') }} className="list-group-item mylink">전체 계좌조회</Nav.Link><br/><br/>
+              <hr/>
+              <Nav.Link onClick={() => { navigate('/') }} className="list-group-item mylink">계좌이체</Nav.Link><br/><br/>
+              <hr/>
+              <Nav.Link onClick={() => { navigate('/') }} className="list-group-item mylink">최근 거래내역</Nav.Link>
+              {/* <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">공과금</Nav.Link>
+              <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">외환</Nav.Link> */}
+
+              {/* <li class="list-group-item"><a href="#">전체계좌조회</a></li>
+              <li class="list-group-item"><a href="#">계좌이체</a></li>
+              <li class="list-group-item"><a href="#">최근 거래내역</a></li> */}
+
+              {/* </ul> */}
 
             </div>
           </div>

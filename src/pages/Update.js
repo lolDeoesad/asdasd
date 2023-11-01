@@ -93,7 +93,7 @@ function Update() {
       </div>
       <div className='update-container'>
         <div className='update-mainbox'>
-          <h2 className='update-title'>회원정보수정</h2><hr />
+          <h2 className='update-title'><br/>회원정보수정</h2><hr />
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">아이디</span>
@@ -147,7 +147,7 @@ function Update() {
             <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
             <input type="text" class="form-control" name="phone" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
           </div>
-          <li style={{ marginBottom: "5px", color: "red" }}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li>
+          {/* <li style={{ marginBottom: "5px", color: "red" }}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li> */}
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">국적</span>

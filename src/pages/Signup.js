@@ -246,7 +246,7 @@ function Signup() {
   return(
     <div className="Signup">
       <div className="Signup-container" >
-        <h2 className='update-title'>회원가입</h2><hr />
+        <h2 className='update-title'><br/>회원가입</h2><hr />
 
         <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span class="input-group-text" id="basic-addon1">아이디</span>
@@ -378,7 +378,7 @@ function Signup() {
             })
         }}>회원가입</button>
       </div>
-      <div className="footer-container">
+      
 
     {/* <button disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
       // axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
@@ -390,7 +390,7 @@ function Signup() {
         console.log(error);
       })
     }}>회원가입</button> */}
-      </div>
+      
     </div>
 
   );

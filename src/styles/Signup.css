@@ -17,10 +17,12 @@
   /* background-color: rgb(210, 209, 209); */
 }
 .Signup-container {
-  width: 900px;
+  width: 600px;
   /* height: 800px; */
   /* border: 1px solid black; */
-  /* background-color: aquamarine; */
+  border-radius: 30px;
+  /* border-style: solid solid none solid; */
+  background-color: #CDEDD7;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -30,6 +32,11 @@
 .username-box{
   margin: auto;
   text-align: center;
+}
+
+.btnJoin{
+  width: 70%;
+  height: auto;
 }
 
 
