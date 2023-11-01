@@ -13,6 +13,7 @@ import Header from './components/Header';
 // import JoinAgree from './pages/JoinAgree';
 import Footer from './components/Footer';
 import axios from 'axios';
+import Main from './pages/Main';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -49,7 +50,7 @@ function App() {
       <Link to={'/account'}>계좌 </Link>
 
       <Routes>
-        <Route path='/' element={<div>인덱스</div>} />
+        <Route path='/main' element={<Main />} />
         {/* 페이지 추가 영역 */}
         <Route path='/login' element={<Login isAuth={isAuth} setAuth={setAuth} userInfo={userInfo} setUserInfo={setUserInfo}/>} />
         <Route path='/account' element={<AccountList />}/>
