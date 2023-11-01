@@ -15,7 +15,7 @@ const Main = () => {
 
   return (
     <div className='mains-container'>
-      <div className='mains'>
+      <div className='mains container'>
         <div className='mains-box1'>
           <div className='mains-banner'>
             <CarouselBN />

@@ -26,7 +26,7 @@ const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
 
           <div className='nav-join' style={{ float: "right" }}>
             <a href='/signup' className='btn btn-success'>회원가입</a>
-            &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {
               isAuth ? <Link to="/" onClick={() => {
                 sessionStorage.removeItem('jwt');
