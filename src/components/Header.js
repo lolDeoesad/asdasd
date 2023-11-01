@@ -19,10 +19,10 @@ const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
         <div className='d-flex headers-nav'>
           {/* <ul> */}
           <Nav.Link onClick={() => { navigate('/account') }} className="list-group-item">조회</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">이체</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">금융상품</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">공과금</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/') }} className="list-group-item">외환</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">이체</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">금융상품</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">공과금</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">외환</Nav.Link>
 
           <div className='nav-join' style={{ float: "right" }}>
             <a href='/signup' className='btn btn-success'>회원가입</a>

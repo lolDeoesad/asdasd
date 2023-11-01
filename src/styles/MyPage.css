@@ -24,6 +24,10 @@
   border-bottom-color: #137d34;
 } */
 
+.mypage{
+  margin-top: 200px;
+}
+
 .mypage-container{
   /* position: sticky; */
   width: 100%;

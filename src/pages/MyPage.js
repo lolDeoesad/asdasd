@@ -123,14 +123,13 @@ const MyPage = () => {
 
 
 
-      <div className='footer-container'>
-
+     
 
         {/* <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">이름</span>
             <input type="text" class="form-control" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
           </div> */}
-      </div>
+     
     </div>
   )
 }

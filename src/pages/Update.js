@@ -215,9 +215,7 @@ function Update() {
         </div>
       </div>
 
-      <div className='footer-container'>
-
-      </div>
+      
     </div>
   )
 }

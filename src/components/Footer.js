@@ -26,14 +26,15 @@ const Footer = () =>{
             <li id='footer-nav-title'>About us</li>
             <li>회사 소개</li>
             <li>채용 안내</li>
-            <li>엔터프라이즈</li>
+            <li>영업점 안내</li>
           </ul>
 
           <ul className='footer-nav-inner'>
             <li id='footer-nav-title'>금융상품</li>
             <li>이젠 생명</li>
-            <li>이젠동부화재</li>
-            <li>이젠실비보험</li>
+            <li>이젠 화재</li>
+            <li>이젠 멤버스</li>
+            <li>이젠 주택청약</li>
           </ul>
 
           {/* <ul className='footer-nav-inner'>
