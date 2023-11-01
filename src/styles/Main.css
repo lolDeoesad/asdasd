@@ -30,8 +30,6 @@
   margin: auto;
   /* margin-left: 200px; */
   /* margin-top: 50px; */
-  
-  
 }
 
 .caroImg{
@@ -49,10 +47,14 @@
 .mains-icon p{
   margin-top: 10px;
   text-align: center;
+  
 }
 
 .icon1{
   margin: 0 38px 0 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #CDEDD7;
 }
 
 .icon1 p{
@@ -73,13 +75,17 @@
 }
 
 .icons{
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
   transition: transform 0.3s;
+  display: inline;
+  align-items: center;
+  grid-template-columns: repeat(7,1fr);
 }
 
 .icons:hover {
-  transform: scale(1.2); /* 호버 했을 때 크기를 확대 (1.2배) */
+  transform: scale(1.05); /* 호버 했을 때 크기를 확대 (1.2배) */
 }
 
 .icons p {
@@ -91,9 +97,15 @@
 }
 
 .mains-box2{
-  width: auto;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  /* width: 1500px; */
   height: 500px;
-  margin-left: 100px;
+  /* text-align: center; */
+  margin: auto;
+  /* margin-left: 200px; */
+  /* margin-top: 50px; */
   
 }
 
@@ -116,6 +128,11 @@
   background-color: #EDE7EA;
   /* border: 1px solid red; */
 
+}
+
+.colored-icon{
+  fill: blue;
+  
 }
 
 /* .caro{

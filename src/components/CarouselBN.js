@@ -7,7 +7,7 @@ import ezenBnn3 from '../assets/ezenBnn3.png';
 
 function CarouselBN() {
   return (
-    <Carousel fade>
+    <Carousel >
       <Carousel.Item>
         <img src={process.env.PUBLIC_URL + '/img/ezenBnn1.png'} style={{width: '1000px', aspectRatio:'8/3'}} alt="" className='caroImg'/>
       </Carousel.Item>

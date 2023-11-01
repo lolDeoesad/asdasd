@@ -56,11 +56,11 @@ function App() {
 
         <Route path='*' element={<div>인덱스</div>} />
       </Routes>
-      {/* <Link to={'/signup'}>회원가입 </Link>
+      <Link to={'/signup'}>회원가입 </Link>
       <Link to={'/login'}>로그인 </Link>
       <Link to={'/update'}>정보수정 </Link>
       <Link to={'/mypage'}>마이페이지 </Link>
-      <Link to={'/account'}>계좌 </Link> */}
+      <Link to={'/account'}>계좌 </Link>
 
       <Footer />
 
