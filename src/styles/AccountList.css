@@ -2,11 +2,14 @@
   text-align: center;
 }
 
+.close {
+  width: 100px;
+}
+
 table {
   border-collapse: collapse;
   width: 550px;
   margin: 0rem auto;
-  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
@@ -20,13 +23,6 @@ th, td {
 
 th {
   background-color: #CDEDD7;
-}
-
-/* 테이블 올렸을 때 */
-tbody tr:hover {
-  background-color: #d3d3d3;
-  opacity: 0.9;
-  cursor: pointer;
 }
 
 /* 테이블 비율 */

@@ -1,18 +1,16 @@
-import { Button } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Nav } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
 import axiosInstance from "../axiosinstance";
-import axios from "axios";
 
 function AccountList() {
-  const {id} = useParams();
+  // const {id} = useParams();
   const [AccountList, setAccountList] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
-    // axiosInstance.get('/account')
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/account`)
+    axiosInstance.get('/account')
       .then(response => {
         console.log(response.data);
         setAccountList(response.data);
@@ -34,25 +32,30 @@ function AccountList() {
         </thead>
         <tbody>
           {
-           AccountList && AccountList.map((account, i) => {
+            AccountList && AccountList.map((account, i) => {
               return (
                 <tr key={i}>
                   <td>
-                    <Link to={'/search'}>
+                    <Nav.Link onClick={() => {navigate('/search')}}>
                       {account.id}
-                    </Link>
+                    </Nav.Link>
                   </td>
-                  <td>{account.balance}</td>
                   <td>{account.userid}</td>
-                  {/* <Button onClick={() => {
-                    axiosInstance.delete('/account', {params : {'id':account.id}})
-                    .then(response => { 
-                      alert(response.data);
-                      navigate('/account');
-                    }).catch(error => {
-                      console.log(error);
-                    })
-                  }}>계좌해지</Button> */}
+                  <td>{account.balance}</td>
+                  <Button className="close" onClick={() => {
+                    if(account.balance === 0) {
+                      axiosInstance.delete('/account', {params : {'id':account.id}})
+                        .then(response => { 
+                          alert(response.data);
+                          navigate('/account');
+                        }).catch(error => {
+                          console.log(error);
+                        })
+                    } else {
+                      alert('잔액이 남아있어 해지를 할 수 없습니다.');
+                    }
+                  
+                  }} style={{background : '#137d34'}}>계좌해지</Button>
                 </tr>
               )
             })

@@ -7,7 +7,7 @@ function AccountSearch() {
 
   return (
     <div className="search">
-      <h1>계좌조회</h1>
+      <h3>계좌조회</h3>
     </div>
   )
 }
