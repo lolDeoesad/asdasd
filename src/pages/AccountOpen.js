@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import '../styles/AccountOpen.css';
 import Accordion from 'react-bootstrap/Accordion';
 import axiosInstance from "../utils/axiosInstance";
+import axios from "axios";
 
 function AccountOpen() {
 
@@ -124,6 +125,7 @@ function AccountOpen() {
           <Button onClick={() => {
             if((document.querySelector('#no').checked === true) && (document.querySelector('#no2').checked === true)){
               axiosInstance.post('/account')
+              // axios.post(`${process.env.REACT_APP_SERVER_URL}/account`)
               .then(response => {
                 alert(response.data);
                 navigate('/');

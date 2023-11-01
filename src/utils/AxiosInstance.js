@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-  baseURL: `${process.env.REACT_APP_SERVER_URL}`,
+const AxiosInstance = axios.create({
+  // baseURL: `${process.env.REACT_APP_SERVER_URL}`,
+  baseURL: `http://localhost:8888`,
   headers: {
     'Content-Type' : 'application/json; charset=utf-8'
   }
@@ -15,9 +16,9 @@ function addJwtToRequest(config) {
   return config;
 }
 
-axiosInstance.interceptors.request.use(
+AxiosInstance.interceptors.request.use(
   config => addJwtToRequest(config),
   error => Promise.reject(error)
 );
 
-export default axiosInstance;
+export default AxiosInstance;

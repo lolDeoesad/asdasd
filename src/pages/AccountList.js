@@ -3,14 +3,16 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
+import axios from "axios";
 
 function AccountList() {
-  const {id} = useParams();
+  // const {id} = useParams();
   const [AccountList, setAccountList] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance.get('/account')
+    // axios.get(`${process.env.REACT_APP_SERVER_URL}/account`)
       .then(response => {
         console.log(response.data);
         setAccountList(response.data);

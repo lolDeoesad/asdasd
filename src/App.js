@@ -1,12 +1,18 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
 import AccountList from './pages/AccountList';
 import AccountSearch from './pages/AccountSearch';
 import AccountOpen from './pages/AccountOpen';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
 import { useEffect, useState } from 'react';
 import axiosInstance from './utils/axiosInstance';
+import { Link, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
+import Update from './pages/Update';
+import MyPage from './pages/MyPage';
+import Header from './components/Header';
+// import JoinAgree from './pages/JoinAgree';
+import Footer from './components/Footer';
+import axios from 'axios';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -17,8 +23,9 @@ function App() {
   useEffect(()=>{
     // setIsLoading(false);
     if(isAuth) {
-      axiosInstance.get('/userInfo')
-                  .then(response => {console.log(response.data);})
+      // axiosInstance.get('/userInfo')
+      axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`)
+                  .then(response => {setUserInfo(response.data);})
                   .catch(error => console.log(error));
       // console.log(userInfo);
       // console.log(userInfo.username);
@@ -27,25 +34,37 @@ function App() {
 
   return (
     <div className="App">
+      {/* {
+        isAuth && <h1>{userInfo.username}님 환영합니다.</h1>
+      } */}
+      <Header />
       {
         isAuth && <h1>{userInfo.username}님 환영합니다.</h1>
       }
-      {/* <Header /> */}
-      <a href='/account'>계좌</a>
+      {/* <Link to={'/agree'}>회원가입 </Link> */}
+      <Link to={'/signup'}>회원가입 </Link>
+      <Link to={'/login'}>로그인 </Link>
+      <Link to={'/update'}>정보수정 </Link>
+      <Link to={'/mypage'}>마이페이지 </Link>
+      <Link to={'/account'}>계좌 </Link>
+
       <Routes>
-        <Route path='/' element={<div>인덱스</div>}/>
+        <Route path='/' element={<div>인덱스</div>} />
         {/* 페이지 추가 영역 */}
-        <Route path='/login' element={<Login setAuth={setAuth}/>} />
+        <Route path='/login' element={<Login isAuth={isAuth} setAuth={setAuth} userInfo={userInfo} setUserInfo={setUserInfo}/>} />
         <Route path='/account' element={<AccountList />}/>
         <Route path='/search' element={<AccountSearch />}/>
         <Route path='/open' element={<AccountOpen />}/>
+        {/* <Route path='/agree' element={<SignupAgree/>} /> */}
         <Route path='/signup' element={<Signup/>} />
-        {/* 페이지 추가 영역 */}
-        <Route path='*' element={<div>인덱스</div>}/>
+        <Route path='/update' element={<Update />} />
+        <Route path='/mypage' element={<MyPage />} />
+
+        <Route path='*' element={<div>인덱스</div>} />
       </Routes>
 
-      {/* <Footer /> */}
-    
+      <Footer />
+
     </div>
   );
 }
