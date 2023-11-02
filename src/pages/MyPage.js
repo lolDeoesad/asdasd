@@ -8,10 +8,8 @@ import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
-const MyPage = () => {
+const MyPage = ({userInfo}) => {
   const navigate = useNavigate();
-
-
   return (
     <div className='mypage'>
       <div className='header-container'>
@@ -39,25 +37,54 @@ const MyPage = () => {
           <div className='mybox' >
             <div className='mybox-bigline'>
               <div className='myloginbox'>
-                <br/><p>    님 환영합니다.</p>
-                <div className='a'>
-                  <img src={process.env.PUBLIC_URL + '/img/person.png'} alt="person" className='' />
-                  <p>아이디</p>
-                  <br /><br />
-                  <a href='/update' className='btn btn-outline-success updateBtn'>정보수정</a>
+                <div className='myname'>
+                  <span class="text-bold">{userInfo.fname}</span>
+                  님 반갑습니다.
                 </div>
-              </div>
-              <div className='b'>
-                <div className='mybox1'>
+                <div className='mypage_total'>
+                  <div className='my_profile_icon'>
+                    <img src={process.env.PUBLIC_URL + '/img/person.png'} alt="person" className='' />
+                  </div>
+                  <div className='my_profile_btn'>
+                    <p className='text-bold' id="user_id">{userInfo.username}</p>
+                    <div style={{ display: "inline" }}>&nbsp;&nbsp;
+                      <a href='/update' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>정보수정</span></a>
+                    </div>
+                    <div style={{ display: "inline" }}>&nbsp;&nbsp;
+                      <a href='/open' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>계좌개설</span></a>
+                    </div>
+                    <div style={{ display: "inline" }}>&nbsp;&nbsp;
+                      <a href='/account' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>계좌목록</span></a>
+                    </div>
+                  </div>
 
+                </div>
+
+              <div className='mypage_bottom'>
+                <div className='my_page_summary1'>
+                  이번 달 카드합산요금 
+                  <br/>
+                  89건 3,150,000원
+                </div>
+                <div className='my_page_summary2'>
+                  고객님의 총 계좌 수는
+                  <br/>
+                  00 개 입니다.
+                </div>
+                
+              </div>
+              </div>
+              <div className='ex'>
+                <div className='mybox1'>
+                  예금 불리기
                 </div>
                 <div className='mybox2'>
-
+                  금융상품
                 </div>
               </div>
             </div>
             <div className='mycommandbox'>
-
+              메인 화면 아이콘 끌어오기
             </div>
             {/* <br /> <strong >최근 거래내역</strong> */}
           </div>

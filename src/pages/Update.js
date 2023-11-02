@@ -7,7 +7,7 @@ import AxiosInstance from '../utils/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 
-function Update() {
+function Update ({userInfo}) {
   const [address, setAddress] = useState('');
   const [jobAddress, setJobAddress] = useState('');
   const [password, setPassword] = useState(''); //비밀번호 상태
@@ -97,7 +97,7 @@ function Update() {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">아이디</span>
-            <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} />
+            <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={userInfo.username} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>

@@ -32,7 +32,7 @@ const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
                 // sessionStorage.removeItem('jwt');
                 // setAuth(false);
                 // setUserInfo({ username: '' });
-                : <a href='/mypage' className='btn btn-success'>회원가입</a>
+                : <a href='/signup' className='btn btn-success'>회원가입</a>
             }
             
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

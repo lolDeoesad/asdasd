@@ -24,8 +24,8 @@ function App() {
   useEffect(()=>{
     // setIsLoading(false);
     if(isAuth) {
-      // axiosInstance.get('/userInfo')
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`)
+      axiosInstance.get('/userInfo')
+      // axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`)
                   .then(response => {setUserInfo(response.data);})
                   .catch(error => console.log(error));
       // console.log(userInfo);
@@ -51,8 +51,8 @@ function App() {
         <Route path='/open' element={<AccountOpen />}/>
         {/* <Route path='/agree' element={<SignupAgree/>} /> */}
         <Route path='/signup' element={<Signup/>} />
-        <Route path='/update' element={<Update />} />
-        <Route path='/mypage' element={<MyPage />} />
+        <Route path='/update' element={<Update userInfo={userInfo} />} />
+        <Route path='/mypage' element={<MyPage userInfo={userInfo}/>} />
 
         <Route path='*' element={<div>인덱스</div>} />
       </Routes>
