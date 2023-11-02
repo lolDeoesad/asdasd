@@ -55,7 +55,7 @@ const Login = ({setAuth}) => {
                   sessionStorage.setItem('jwt', jwt);
                   setAuth(true);
                   alert('로그인 성공');
-                  navigate('/');
+                  navigate('/main');
                 }
               }).catch(error => {
                 alert('로그인 실패');

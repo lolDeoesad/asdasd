@@ -32,7 +32,8 @@
   /* position: sticky; */
   width: 100%;
   height: auto;
-  display: flex;
+  justify-content: center;
+  /* display: flex; */
   margin: 50px -40px 50px -40px;
   /* align-items: center; */
   /* justify-content: center; */
@@ -47,6 +48,12 @@
     
 }
 
+.solid{
+  width: 100%;
+  border: 5px solid lightgray;
+  border-style: dashed;
+}
+
 .mypageBox2{
   width: 300px;
   height: 800px;
@@ -55,8 +62,8 @@
 
 }
 
-.imgezenLife{
-  width: 800px;
+.ezenSecurity{
+  width: 100%;
   height: 250px;
   border-radius: 20px;
   filter: drop-shadow(10px 6px 6px);
@@ -69,7 +76,7 @@
 }
 
 .menubox{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
   height: 410px;
   
@@ -98,14 +105,79 @@
   
 }
 
-.history{
-  width: 1074px;
+.mybox{
+  width: 100%;
   height: 800px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 20px;
   margin-left: 100px;
+  display: flex;
   
 }
+
+.mybox-bigline{
+  display: flex;
+  flex-direction: column;
+}
+
+.myloginbox{
+  width: 800px;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.mycommandbox{
+ width: 500px;
+ height: 730px;
+ border: 1px solid black;
+  border-radius: 20px;
+  margin-left: 50px;
+}
+
+.a{
+  display: flex;
+}
+
+
+.a img{
+  width: 100px;
+  height: 100px;
+}
+
+.b{
+  display: flex;
+  margin-top: 30px;
+}
+
+.updateBtn{
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.myloginbox p{
+  font-size: 20px;
+}
+
+.mybox1{
+ width: 375px;
+ height: 300px;
+ border: 1px solid black;
+ border-radius: 20px;
+}
+
+.mybox2{
+  width: 375px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-left: 50px;
+}
+
+
+
 
 .history strong{
   margin-top: 100px;

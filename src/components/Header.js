@@ -25,14 +25,23 @@ const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
           <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">외환</Nav.Link>
 
           <div className='nav-join' style={{ float: "right" }}>
-            <a href='/signup' className='btn btn-success'>회원가입</a>
+          {
+              isAuth ? <Link to="/mypage" onClick={() => {
+                
+              }} className='btn btn-success'>마이페이지</Link>
+                // sessionStorage.removeItem('jwt');
+                // setAuth(false);
+                // setUserInfo({ username: '' });
+                : <a href='/mypage' className='btn btn-success'>회원가입</a>
+            }
+            
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {
-              isAuth ? <Link to="/" onClick={() => {
+              isAuth ? <Link to="/main" onClick={() => {
                 sessionStorage.removeItem('jwt');
                 setAuth(false);
                 setUserInfo({ username: '' });
-              }}>로그아웃</Link>
+              }}className='btn btn-success'>로그아웃</Link>
                 : <a href='/login' className='btn btn-success'>로그인</a>
             }
           </div>
