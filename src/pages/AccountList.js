@@ -1,5 +1,5 @@
-import { Button } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Nav } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import '../styles/AccountList.css';
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
@@ -23,7 +23,7 @@ function AccountList() {
 
   return (
     <div className="account">
-      <h1>계좌목록페이지</h1>
+      <h3>계좌목록</h3>
       <table>
         <thead>
           <tr>
@@ -34,32 +34,37 @@ function AccountList() {
         </thead>
         <tbody>
           {
-           AccountList && AccountList.map((account, i) => {
+            AccountList && AccountList.map((account, i) => {
               return (
                 <tr key={i}>
                   <td>
-                    <Link to={'/search'}>
+                    <Nav.Link onClick={() => {navigate('/search')}}>
                       {account.id}
-                    </Link>
+                    </Nav.Link>
                   </td>
-                  <td>{account.balance}</td>
                   <td>{account.userid}</td>
-                  {/* <Button onClick={() => {
-                    axiosInstance.delete('/account', {params : {'id':account.id}})
-                    .then(response => { 
-                      alert(response.data);
-                      navigate('/account');
-                    }).catch(error => {
-                      console.log(error);
-                    })
-                  }}>계좌해지</Button> */}
+                  <td>{account.balance}</td>
+                  <Button className="close" onClick={() => {
+                    if(account.balance === 0) {
+                      axiosInstance.delete('/account', {params : {'id':account.id}})
+                        .then(response => { 
+                          alert(response.data);
+                          navigate('/account');
+                        }).catch(error => {
+                          console.log(error);
+                        })
+                    } else {
+                      alert('잔액이 남아있어 해지를 할 수 없습니다.');
+                    }
+                  
+                  }} style={{background : '#137d34'}}>계좌해지</Button>
                 </tr>
               )
             })
           }
         </tbody>
-      </table>
-      <Button onClick={() => {navigate('/open')}}>계좌개설신청</Button>
+      </table> <br/>
+      <Button onClick={() => {navigate('/open')}} style={{background : '#137d34'}}>계좌개설신청</Button>
     </div>
   )
 

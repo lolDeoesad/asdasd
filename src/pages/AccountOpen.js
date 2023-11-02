@@ -19,7 +19,7 @@ function AccountOpen() {
 
       <div className="main">
         <div className="">
-          <h1>계좌개설</h1>
+          <h3>계좌개설</h3>
         </div>
         
         <div className="content">
@@ -27,12 +27,12 @@ function AccountOpen() {
             <h5>어떤 용도로 통장을 사용하실 건가요?</h5>
 
               <div className="d-flex justify-content-center">              
-                <label for="form-test" className="w-50">계좌사용용도</label>
-                <Form.Select id="form-test" className="select">
-                  <option>선택해주세요</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
+                <Form.Select style={{width : '300px'}} placeholder="계좌사용용도">
+                  <option>급여 및 아르바이트</option>
+                  <option>생활비 관리</option>
+                  <option>적금 자동이체</option>
+                  <option>예금가입</option>
+                  <option>대출신청</option>
                 </Form.Select>
               </div>
           </div>
@@ -136,11 +136,11 @@ function AccountOpen() {
               alert(`제출 실패하셨습니다.`);
             }
             
-          }} style={{height : '40px'}}>제출</Button>
+          }} style={{height : '40px', background : '#137d34'}}>제출</Button>
           &nbsp;
           &nbsp;
           &nbsp;
-          <Button onClick={() => {navigate('/account')}} style={{height : '40px'}}>취소</Button>
+          <Button onClick={() => {navigate('/account')}} style={{height : '40px', background : '#137d34'}}>취소</Button>
         </div>
       </div>
       
