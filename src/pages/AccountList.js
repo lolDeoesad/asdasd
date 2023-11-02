@@ -61,7 +61,7 @@ function AccountList() {
             })
           }
         </tbody>
-      </table>
+      </table> <br/>
       <Button onClick={() => {navigate('/open')}} style={{background : '#137d34'}}>계좌개설신청</Button>
     </div>
   )
