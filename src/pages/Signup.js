@@ -372,7 +372,7 @@ function Signup() {
           axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
             .then(response => {
               alert(response.data);
-              navigate('/')
+              navigate('/login')
             }).catch(error => {
               console.log(error);
             })

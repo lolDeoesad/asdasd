@@ -18,18 +18,7 @@ function Update ({userInfo}) {
   const [fullAddress, setFullAddress] = useState('');
   const navigate = useNavigate();
 
-  const [user, setUser] = useState({  //인풋으로 입력받은 값 저장할 유저정보 스테이트
-    username: '',
-    fname: '',
-    password: '',
-    idNo: '',
-    email: '',
-    phone: '',
-    country: '',
-    address: '',
-    job: '',
-    agree: ''
-  });
+  const [user, setUser] = useState({...userInfo});
 
   const changeHandler = (e) => {    // 입력 받은 값들 뽑아서 서버에 보내줄거임 
     setUser({
@@ -97,12 +86,12 @@ function Update ({userInfo}) {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">아이디</span>
-            <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={userInfo.username} />
+            <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.username} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">이름</span>
-            <input type="text" class="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+            <input type="text" class="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.fname}  />
           </div>
 
 
@@ -120,23 +109,23 @@ function Update ({userInfo}) {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">주민번호</span>
-            <input type="text" class="form-control" name="idNo" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} />
+            <input type="text" class="form-control" name="idNo" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.idNo} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">회원번호</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} />
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.id} />
           </div>
 
           <div class="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} />
+            <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} value={user.email} />
             <div class="input-group-text" id="basic-addon2">
 
               <Form.Select aria-label="Default select example">
                 <option>도메인</option>
                 <option value="1">naver.com</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="2">google.com</option>
+                <option value="3">daum.net</option>
               </Form.Select>
 
             </div>
@@ -145,13 +134,13 @@ function Update ({userInfo}) {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
-            <input type="text" class="form-control" name="phone" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+            <input type="text" class="form-control" name="phone" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.phone} />
           </div>
           {/* <li style={{ marginBottom: "5px", color: "red" }}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li> */}
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">국적</span>
-            <input type="text" class="form-control" name="country" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} />
+            <input type="text" class="form-control" name="country" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.country} />
           </div>
 
           <hr />
@@ -162,49 +151,36 @@ function Update ({userInfo}) {
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <DaumMap setAddress={setAddress} />
-            <input type="text" class="form-control" placeholder="주소" name="address" value={address} aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+            <input type="text" class="form-control" placeholder="주소" name="address" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.address} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.addressDetail} />
           </div>
-
-          {/* <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
-            <input type="text" class="form-control" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" />
-            <div class="form-check " style={{ marginLeft: "10px" }}>
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-              <label class="form-check-label" for="flexCheckChecked">
-                번호 없음
-              </label>
-            </div>
-          </div>
-          <br /> */}
 
           <hr />
           <h3 className='update-title'>직장정보</h3>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">직장명</span>
-            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobName}/>
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">부서명</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.teamName}/>
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <DaumMap setAddress={setJobAddress} />
-            <input type="text" class="form-control" placeholder="주소" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddress} />
           </div>
 
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddressDetail}/>
           </div>
           <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <span class="input-group-text" id="basic-addon1">직장연락처</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobPhone}/>
           </div>
           {/* <input type="hidden" name="job"/> */}
 

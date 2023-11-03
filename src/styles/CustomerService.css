@@ -1,0 +1,25 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+.customer-container{
+  width: 1500px;
+  margin-left: 100px;
+  justify-content: center;
+  
+}
+
+.customer-leftbox{
+  width: 250px;
+  height: 700px;
+  border: 1px solid black;
+  margin: 30px 30px 30px 0;
+}
+
+.customer-leftbox li{
+  list-style: none;
+  border: 1px solid black;
+  padding: 20px 20px 20px 20px;
+}

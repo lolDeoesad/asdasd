@@ -5,10 +5,10 @@ import { useState } from 'react';
 // import ToggleButton from 'react-bootstrap/ToggleButton';
 import AccountCard from '../components/AccountCard';
 import Header from '../components/Header';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 
-const MyPage = ({userInfo}) => {
+const MyPage = ({ userInfo }) => {
   const navigate = useNavigate();
   return (
     <div className='mypage'>
@@ -19,11 +19,7 @@ const MyPage = ({userInfo}) => {
 
       <div className='mypage-container'>
         <div className='mypageBox1'>
-          <div className='d-flex justify-content-center' style={{ marginTop: "5%", height: "300px" }}>
-            <div className='bannerbox' style={{ marginRight: "5%" }}>
-              <img className='ezenSecurity' src={process.env.PUBLIC_URL + '/img/security.png'} alt="security" />
-            </div>
-          </div>
+          
           <div className='accountBox'>
             <h1><strong>마이페이지</strong></h1>
             <hr className='solid' />
@@ -48,38 +44,61 @@ const MyPage = ({userInfo}) => {
                   <div className='my_profile_btn'>
                     <p className='text-bold' id="user_id">{userInfo.username}</p>
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
-                      <a href='/update' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>정보수정</span></a>
+                      <Link to='/update' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>정보수정</span></Link>
                     </div>
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
-                      <a href='/open' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>계좌개설</span></a>
+                      <Link to='/open' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>계좌개설</span></Link>
                     </div>
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
-                      <a href='/account' className='btn btn-outline-success updateBtn'><span style={{fontSize:"15px"}}>계좌목록</span></a>
+                      <Link to='/account' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>계좌목록</span></Link>
                     </div>
                   </div>
 
                 </div>
 
-              <div className='mypage_bottom'>
-                <div className='my_page_summary1'>
-                  이번 달 카드합산요금 
-                  <br/>
-                  89건 3,150,000원
+                <div className='mypage_bottom'>
+                  <div className='my_page_summary1'>
+                    <strong>이번 달 카드합산요금 </strong>
+                    <br />
+                    89건 3,150,000원
+                  </div>
+                  <div className='my_page_summary2'>
+                    고객님의 총 계좌 수는
+                    <br />
+                    00 개 입니다.
+                  </div>
+
                 </div>
-                <div className='my_page_summary2'>
-                  고객님의 총 계좌 수는
-                  <br/>
-                  00 개 입니다.
-                </div>
-                
-              </div>
               </div>
               <div className='ex'>
                 <div className='mybox1'>
-                  예금 불리기
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/deposit.png'} alt="deposit" href="#" className='deposit' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;입출금</strong>
+                  </div>
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/subaccount.png'} alt="subaccount" href="#" className='subaccount' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;청약통장</strong>
+                  </div>
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/creditcard.png'} alt="creditcard" href="#" className='creditcard' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신용카드 추가 생성</strong>
+                  </div>
                 </div>
                 <div className='mybox2'>
-                  금융상품
+                  
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/fund.png'} alt="fund" href="#" className='fund' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;펀드</strong>
+                  </div>
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/loan.png'} alt="loan" href="#" className='loan' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대출</strong>
+                  </div>
+                  <div>
+                    <img src={process.env.PUBLIC_URL + '/img/portfolio.png'} alt="portfolio" href="#" className='portfolio' />
+                    <strong style={{ fontSize: "18px" }}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포트폴리오</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,11 +107,14 @@ const MyPage = ({userInfo}) => {
             </div>
             {/* <br /> <strong >최근 거래내역</strong> */}
           </div>
-
-
-
         </div>
-
+              
+              {/* 시큐리티 배너 */}
+        <div className='d-flex justify-content-center' style={{ marginTop: "5%", height: "300px" }}>
+            <div className='bannerbox' style={{ marginRight: "5%" }}>
+              <img className='ezenSecurity' src={process.env.PUBLIC_URL + '/img/security.png'} alt="security" />
+            </div>
+          </div>
 
 
         {/* 

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/* font-family: 'Tilt Neon', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
 
 *{
   box-sizing: border-box;
@@ -11,6 +11,7 @@
   width: 100%;
   height: 150px;
   padding: 15px 5px 10px;
+  font-family: 'Nanum Gothic', sans-serif;
   
   /* border: none; */
   /* background-color: #137d34; */
@@ -27,7 +28,6 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  font-family: 'Tilt Neon', sans-serif;
   border-style: none none solid none;
   border-bottom-color: #137d34;
   

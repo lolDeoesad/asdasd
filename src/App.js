@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import axios from 'axios';
 import Main from './pages/Main';
+import CustomerService from './pages/CustomerService';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -49,6 +50,7 @@ function App() {
         <Route path='/account' element={<AccountList />}/>
         <Route path='/search' element={<AccountSearch />}/>
         <Route path='/open' element={<AccountOpen />}/>
+        <Route path='/customer' element={<CustomerService />}/>
         {/* <Route path='/agree' element={<SignupAgree/>} /> */}
         <Route path='/signup' element={<Signup/>} />
         <Route path='/update' element={<Update userInfo={userInfo} />} />
@@ -61,6 +63,7 @@ function App() {
       <Link to={'/update'}>정보수정 </Link>
       <Link to={'/mypage'}>마이페이지 </Link>
       <Link to={'/account'}>계좌 </Link>
+      <Link to={'/customer'}>고객센터 </Link>
 
       <Footer />
 
