@@ -43,7 +43,7 @@ function Signup() {
     jobPhone : '',
     agree : ''
   });
-  
+
   useEffect(() => {       // address 변경되면 실행될 useEffect
     setUserInfo({
       ...userInfo,
@@ -58,8 +58,6 @@ function Signup() {
   } else 
     setCheckBtn(true);
   }, [isId, isFname, isPw, isPwCheck, isIdNo, isTel, isCountry, isaddress, isTerms ,error, proper])
-
-  console.log(userInfo);
 
   const navigate = useNavigate();
 
@@ -223,7 +221,7 @@ function Signup() {
   }
 
   const addressCheck = (e) => {       // 주소검사 
-    if(e.target.value === '' || address === '') {
+    if(e.target.value === '' || address === '') {   
       alert('주소는 필수 입력입니다.')
       setIsAddress(true);
       return;
@@ -240,50 +238,50 @@ function Signup() {
     }
   }
 
- console.log(isaddress);
- console.log(isId, isFname, isPw, isPwCheck, isIdNo, isCountry, isTel, isTerms ,checkBtn);
+ console.log(userInfo);
+ console.log(isId, isFname, isPw, isPwCheck, isIdNo, isCountry, isaddress, isTel, isTerms ,checkBtn);
 
   return(
     <div className="Signup">
       <div className="Signup-container" >
         <h2 className='update-title'>회원가입</h2><hr />
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">아이디</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">아이디</span>
           <input type="text" class="form-control" name="username" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={idRegEX} />
         </div>
         { isId? <span id="error">{error[0]}</span> : <span id="proper">{proper[0]}</span> }
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">이름</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">이름</span>
           <input type="text" class="form-control" name="fname" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={fnRegEX} />
         </div>
         { isFname? <span id="error">{error[1]}</span> : <span id="proper">{proper[1]}</span> }
 
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">비밀번호</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">비밀번호</span>
           <input type="password" class="form-control" name="password" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={pwRegEX} />
         </div>
         { isPw? <span id="error">{error[2]}</span> : <span id="proper">{proper[2]}</span> }
 
         
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">비밀번호재확인</span>
           <input type="password" class="form-control" name="password-check" placeholder="비밀번호재확인" aria-label="Username" aria-describedby="basic-addon1" onBlur={pwCheck} />
         </div>
         { isPwCheck? <span id="error">{error[3]}</span> : <span id="proper">{proper[3]}</span> }
         {/* {pwError && <div style={{ color: 'red', marginBottom: '5px', }}>{pwError}</div>} */}
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">주민번호</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">주민번호</span>
           <input type="password" class="form-control" name="idNo" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onInput={idNumRegEX} onBlur={idNumRegEX2} maxLength={14} />
         </div>
         { isIdNo? <span id="error">{error[4]}</span> : <span id="proper">{proper[4]}</span> }
 
-        <div class="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <input type="text" class="form-control" name="email" placeholder="이메일 주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} onBlur={eRegEX} />
-          <div class="input-group-text" id="basic-addon2">
+          <div className="input-group-text" id="basic-addon2">
             <Form.Select aria-label="Default select example">
               <option>도메인</option>
               <option value="1">naver.com</option>
@@ -295,14 +293,14 @@ function Signup() {
         </div>
         { isEmail? <span id="error">{error[5]}</span> : <span id="proper">{proper[5]}</span> }
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">휴대폰번호</span>
           <input type="text" class="form-control" name="phone" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onInput={phRegEx} maxLength={13} onBlur={phRegEx2} />
         </div>
         { isTel? <span id="error">{error[6]}</span> : <span id="proper">{proper[6]}</span> }
 
 
-        <div class="input-group-text username-box" id="basic-addon2" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group-text username-box" id="basic-addon2" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <Form.Select aria-label="Default select example" name="country" onChange={changeHandler} onClick={countryCheckd}>
             <option>국적을 선택하세요(필수선택)</option>
             <option value="korean">내국인</option>
@@ -310,17 +308,16 @@ function Signup() {
           </Form.Select>
         </div>
 
-
         <hr />
 
         <h3 className='update-title'>자택주소</h3>
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <DaumMap setAddress={setAddress} />
-          <input type="text" class="form-control" placeholder="주소" name="address" value={address} aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+          <input type="text" class="form-control" placeholder="주소" name="address" value={address} readOnly aria-label="Username" aria-describedby="basic-addon1"  />
         </div>
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
           <input type="text" class="form-control" placeholder="상세주소" name="addressDetail" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={addressCheck} />
         </div>
@@ -329,46 +326,44 @@ function Signup() {
 
         <h3 className='update-title'>직장정보</h3>
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">직장명</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">직장명</span>
           <input type="text" class="form-control" name="jobName" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
         </div>
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">부서명</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">부서명</span>
           <input type="text" class="form-control" name="teamName" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
         </div>
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <DaumMap setAddress={setJobAddress} />
-          <input type="text" class="form-control" placeholder="주소" name="jobAddress" value={jobAddress} aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
+          <input type="text" class="form-control" placeholder="주소" name="jobAddress" value={jobAddress} readOnly aria-label="Username" aria-describedby="basic-addon1"  />
         </div>
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
           <input type="text" class="form-control" placeholder="상세주소" name="jobAddressDetail" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
         </div>
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <span class="input-group-text" id="basic-addon1">직장연락처</span>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <span className="input-group-text" id="basic-addon1">직장연락처</span>
           <input type="text" class="form-control" name="jobPhone" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} />
         </div>
 
-        <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+        <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <Accordion defaultActiveKey="0" style={{  }}>
             <Accordion.Item eventKey="0" >
-              <Accordion.Header >약관</Accordion.Header>
+              <Accordion.Header >개인정보 동의</Accordion.Header>
               <Accordion.Body>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                 <input name="agree" type="checkbox" onChange={changeHandler} onClick={termsChecked} value="y" /><br />
-                <span>※약관은 필수로 동의해 주셔야 합니다※</span>
-
+                <span>※개인정보는 필수로 동의해 주셔야 합니다※</span>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </div>
         <br />
         <br />
-        <button type="submit" class="btn btn-success" disabled={checkBtn} onClick={() => {
-          // axios.post(`${process.env.REACT_APP_SERVER_URL}/signup`, userInfo)
+        <button type="submit" className="btn btn-success" disabled={checkBtn} onClick={() => {
           axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
             .then(response => {
               alert(response.data);
@@ -379,17 +374,6 @@ function Signup() {
         }}>회원가입</button>
       </div>
       <div className="footer-container">
-
-    {/* <button disabled={(isId && isFname && isPw && isIdNo && isEmail && isTel && isChecked)} onClick={() => {
-      // axios.post(`${process.env.REACT_APP_SERVER_URL}/user`, userInfo)
-      axios.post(`http://localhost:8888/user`, userInfo)
-      .then(response => {
-        alert(response.data);
-        navigate('/')
-      }).catch(error => {
-        console.log(error);
-      })
-    }}>회원가입</button> */}
       </div>
     </div>
 

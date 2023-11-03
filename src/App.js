@@ -13,6 +13,7 @@ import Header from './components/Header';
 // import JoinAgree from './pages/JoinAgree';
 import Footer from './components/Footer';
 import axios from 'axios';
+import Approval from './pages/Approval';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -24,7 +25,9 @@ function App() {
     // setIsLoading(false);
     if(isAuth) {
       // axiosInstance.get('/userInfo')
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`)
+      axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`,{
+        params: 'aaa'
+      })
                   .then(response => {setUserInfo(response.data);})
                   .catch(error => console.log(error));
       // console.log(userInfo);
@@ -59,7 +62,7 @@ function App() {
         <Route path='/signup' element={<Signup/>} />
         <Route path='/update' element={<Update />} />
         <Route path='/mypage' element={<MyPage />} />
-
+        <Route path='/approval' element={<Approval/>} />
         <Route path='*' element={<div>인덱스</div>} />
       </Routes>
 
