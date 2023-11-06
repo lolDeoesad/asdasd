@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import axios from 'axios';
 import Main from './pages/Main';
 import CustomerService from './pages/CustomerService';
+import Qna from './pages/Qna';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -55,8 +56,9 @@ function App() {
         <Route path='/signup' element={<Signup/>} />
         <Route path='/update' element={<Update userInfo={userInfo} />} />
         <Route path='/mypage' element={<MyPage userInfo={userInfo}/>} />
+        <Route path='/qna' element={<Qna userInfo={userInfo}/>} />
 
-        <Route path='*' element={<div>인덱스</div>} />
+        <Route path='*' element={<Main />} />
       </Routes>
       <Link to={'/signup'}>회원가입 </Link>
       <Link to={'/login'}>로그인 </Link>
@@ -64,6 +66,7 @@ function App() {
       <Link to={'/mypage'}>마이페이지 </Link>
       <Link to={'/account'}>계좌 </Link>
       <Link to={'/customer'}>고객센터 </Link>
+      <Link to={'/qna'}>고객센터 </Link>
 
       <Footer />
 

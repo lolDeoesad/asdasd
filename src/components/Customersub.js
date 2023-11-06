@@ -1,13 +1,13 @@
-import '../styles/CustomerService.css';
+import '../styles/Customersub.css';
 import React from 'react';
 import { Accordion } from "react-bootstrap";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const CustomerService = () => {
+const Customersub = () => {
   return (
-    <div className='customer-container'>
-      <div className='customer-leftbox'>
+    // <div className='customersub-container'>
+      <div className='customersub-leftbox'>
 
         {/* <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
@@ -92,25 +92,19 @@ const CustomerService = () => {
           </Accordion.Item>
         </Accordion>
 
-        <div className='customer-num'>
+        <div className='customersub-num'>
           <img src={process.env.PUBLIC_URL + '/img/customer2.png'} alt="icon" href="#" />
           <Link to="/customer" style={{ textDecoration: "none", color: "black" }}>
             <h3><strong>고객센터</strong></h3>
           </Link>
         </div>
-        <div className='cutomer-num1'>
+        <div className='cutomersub-num1'>
           <h3><strong>02-2675-1750</strong></h3>
         </div>
       </div>
-      <div className='customer-rightbox'>
-        {/* <h2><strong>고객센터</strong></h2> */}
-        {/* <hr style={{ width: "250px" }} /> */}
-        <div className='customer-poster'>
-          <img src={process.env.PUBLIC_URL + '/img/cusposter.png'} alt="poster" href="#" />
-        </div>
-      </div>
-    </div>
+
+    // </div>
   )
 }
 
-export default CustomerService;
+export default Customersub;

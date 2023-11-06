@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CarouselBN from '../components/CarouselBN';
 import '../styles/Main.css';
 import React, { useState } from 'react';
@@ -49,7 +50,9 @@ const Main = () => {
                 <p>?</p>
               </div>
               <div className={`icon2 icons ${isHovered ? 'hovered' : ''}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <img src={process.env.PUBLIC_URL + '/img/customer1.png'} alt="exchange" href="#" className='icons' />
+                <Link to="/customer">
+                <img src={process.env.PUBLIC_URL + '/img/customer1.png'} alt="customer" href="/customer" className='icons' />
+                </Link>
                 <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고객센터</strong>
               </div>
 
