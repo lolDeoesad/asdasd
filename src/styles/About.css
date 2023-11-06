@@ -1,0 +1,25 @@
+.map-container{
+  width: 1800px;
+  /* height: 100%; */
+  font-family: 'Nanum Gothic', sans-serif;
+  display: flex;
+}
+
+.map-leftbox{
+  margin-bottom: 100px;
+}
+
+.map-rightbox{
+  width: 1200px;
+  height: 800px;
+  /* border: 1px solid black; */
+  margin: 50px 0px 100px 150px;
+  background-color: #CDEDD7;
+  border-radius: 10px;
+}
+
+
+#kakao-map{
+  margin: 50px 0px 0 600px;
+  border-radius: 20px;
+}

@@ -1,24 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
+
 .Qna-container{
   width: 1500px;
-  /* height: 100%; */
-  margin-left: 100px;
-  justify-content: center;
-}
-
-Customersub{
-
-}
-
-.Qna-leftbox{
+  height: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
   display: flex;
-  width: 250px;
-  height: 900px;
-
 }
+
 
 .Qna-rightbox{
   width: 1000px;
-  height: 900px;
-  border: 1px solid black;
-  margin: 100px 30px 0px 0;
+  height: 100%;
+  /* border: 1px solid black; */
+  margin: 50px 0px 100px 100px;
+}
+
+.Qna-rightbox h2{
+  text-align: center;
+}
+
+.accoBady{
+  background-color: #F5F5F5;
+}
+
+.Qna-writer strong{
+  text-align: center;
 }

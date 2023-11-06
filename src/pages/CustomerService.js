@@ -19,9 +19,9 @@ const CustomerService = () => {
         </Accordion>  */}
         <h2><strong>고객센터</strong></h2>
         <hr style={{ width: "250px" }} />
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="0" flush style={{ marginTop: "-20px", marginBottom: "10px" }}>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>고객상담</Accordion.Header>
+            <Accordion.Header><strong>고객상담</strong></Accordion.Header>
             <Link to="/qna" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
                 자주하는 질문
@@ -39,18 +39,20 @@ const CustomerService = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="0" flush style={{ marginBottom: "10px" }}>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>영업점</Accordion.Header>
-            <Accordion.Body className='accoBady'>
-              영업점/ATM찾기
-            </Accordion.Body>
+            <Accordion.Header><strong>영업점</strong></Accordion.Header>
+            <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
+              <Accordion.Body className='accoBady'>
+                영업점/ATM찾기
+              </Accordion.Body>
+            </Link>
           </Accordion.Item>
         </Accordion>
 
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="0" flush style={{ marginBottom: "10px" }}>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>새소식/이벤트</Accordion.Header>
+            <Accordion.Header><strong>새소식/이벤트</strong></Accordion.Header>
             <Accordion.Body className='accoBady'>
               새소식
             </Accordion.Body>
@@ -60,9 +62,9 @@ const CustomerService = () => {
           </Accordion.Item>
         </Accordion>
 
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="0" flush style={{ marginBottom: "10px" }}>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>이젠소비자세상</Accordion.Header>
+            <Accordion.Header><strong>이젠소비자세상</strong></Accordion.Header>
             <Link to="https://www.kca.go.kr/home/main.do" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
                 소비자보호원
@@ -72,9 +74,9 @@ const CustomerService = () => {
         </Accordion>
 
 
-        <Accordion defaultActiveKey="0">
+        <Accordion defaultActiveKey="0" flush style={{ marginBottom: "10px" }}>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>이용안내</Accordion.Header>
+            <Accordion.Header><strong>이용안내</strong></Accordion.Header>
             <Link to="#" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
                 인터넷뱅킹
