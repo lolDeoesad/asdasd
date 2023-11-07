@@ -1,6 +1,5 @@
 import './App.css';
 import AccountList from './pages/AccountList';
-import AccountSearch from './pages/AccountSearch';
 import AccountOpen from './pages/AccountOpen';
 import Signup from './pages/Signup';
 import { useEffect, useState } from 'react';
@@ -13,6 +12,7 @@ import Header from './components/Header';
 // import JoinAgree from './pages/JoinAgree';
 import Footer from './components/Footer';
 import axios from 'axios';
+import AccountTransfer from './pages/AccountTransfer';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -52,8 +52,8 @@ function App() {
         <Route path='/' element={<div>인덱스</div>} />
         {/* 페이지 추가 영역 */}
         <Route path='/login' element={<Login isAuth={isAuth} setAuth={setAuth} userInfo={userInfo} setUserInfo={setUserInfo}/>} />
-        <Route path='/account' element={<AccountList />}/>
-        <Route path='/search' element={<AccountSearch />}/>
+        <Route path='/account' element={<AccountList userInfo={userInfo} setUserInfo={setUserInfo} />}/>
+        <Route path='/transfer/:id' element={<AccountTransfer userInfo={userInfo} />}/>
         <Route path='/open' element={<AccountOpen />}/>
         {/* <Route path='/agree' element={<SignupAgree/>} /> */}
         <Route path='/signup' element={<Signup/>} />
