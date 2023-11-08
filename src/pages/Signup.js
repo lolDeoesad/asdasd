@@ -353,8 +353,11 @@ function Signup() {
             <Accordion.Item eventKey="0" >
               <Accordion.Header >개인정보 동의</Accordion.Header>
               <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              본 동의는 (금융)거래와 관련하여 귀 행이 본인의 개인(신용)정보를 수집·이용 하고자 하는 경우에는 
+              「신용정보의 이용 및 보호에 관한 법률」 제15조 제2항, 제32조 제1항, 제33조 및 제34조, 
+              「개인정보 보호법」 제15조 제1항 제1호, 제24조 제1항 제1호, 제24조의2에 따라 본인의 동의가 필요합니다.
+              본 동의는 비 여신(금융)거래(수신, 외국환, 전자금융, 현금카드, 신탁, 퇴직연금, 펀드, 파생상품, 대여금고, 보호예수, 각종 대행업무 등)
+              와 관련하여 본인의 개인(신용)정보를 수집·이용하기 위해 처음 1회만 동의 절차가 필요합니다.
                 <input name="agree" type="checkbox" onChange={changeHandler} onClick={termsChecked} value="y" /><br />
                 <span>※개인정보는 필수로 동의해 주셔야 합니다※</span>
               </Accordion.Body>

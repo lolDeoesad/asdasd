@@ -14,6 +14,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import axios from 'axios';
 import Approval from './pages/Approval';
+import Qna from './pages/Qna';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -24,17 +25,14 @@ function App() {
   useEffect(()=>{
     // setIsLoading(false);
     if(isAuth) {
-      // axiosInstance.get('/userInfo')
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`,{
-        params: 'aaa'
-      })
-                  .then(response => {setUserInfo(response.data);})
+      axiosInstance.get('/userInfo')
+      .then(response => {setUserInfo(response.data);})
                   .catch(error => console.log(error));
       // console.log(userInfo);
       // console.log(userInfo.username);
     }
   }, [isAuth])
-
+  
   return (
     <div className="App">
       {/* {
@@ -50,6 +48,7 @@ function App() {
       <Link to={'/update'}>정보수정 </Link>
       <Link to={'/mypage'}>마이페이지 </Link>
       <Link to={'/account'}>계좌 </Link>
+      <Link to={'/approval'}>권한수정 </Link>
 
       <Routes>
         <Route path='/' element={<div>인덱스</div>} />
@@ -59,10 +58,12 @@ function App() {
         <Route path='/search' element={<AccountSearch />}/>
         <Route path='/open' element={<AccountOpen />}/>
         {/* <Route path='/agree' element={<SignupAgree/>} /> */}
+        <Route path='/qna' element={<Qna/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/update' element={<Update />} />
         <Route path='/mypage' element={<MyPage />} />
-        <Route path='/approval' element={<Approval/>} />
+        
+        <Route path='/approval' element={userInfo.role=="ADMIN" ? <Approval/> : <div>인덱스</div>} />
         <Route path='*' element={<div>인덱스</div>} />
       </Routes>
 
