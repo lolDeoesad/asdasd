@@ -53,11 +53,13 @@ const Customersub = () => {
         <Accordion defaultActiveKey="0" flush style={{marginBottom: "10px"}}>
           <Accordion.Item eventKey="1">
             <Accordion.Header><strong>새소식/이벤트</strong></Accordion.Header>
+            <Link to="/event" style={{ textDecoration: "none", color: "black" }}>
+              <Accordion.Body className='accoBady'>
+                이벤트
+              </Accordion.Body>
+            </Link>
             <Accordion.Body className='accoBady'>
               새소식
-            </Accordion.Body>
-            <Accordion.Body className='accoBady'>
-              이벤트
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -77,16 +79,16 @@ const Customersub = () => {
         <Accordion defaultActiveKey="0" flush style={{marginBottom: "10px"}}>
           <Accordion.Item eventKey="1">
             <Accordion.Header><strong>이용안내</strong></Accordion.Header>
-            <Link to="#" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/secu" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
-                인터넷뱅킹
+                보안센터
               </Accordion.Body>
             </Link>
             <Accordion.Body className='accoBady'>
               폰뱅킹
             </Accordion.Body>
             <Accordion.Body className='accoBady'>
-              전자금융
+             인터넷뱅킹
             </Accordion.Body>
             <Accordion.Body className='accoBady'>
               스마트폰 앱

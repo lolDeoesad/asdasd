@@ -17,6 +17,8 @@ import Main from './pages/Main';
 import CustomerService from './pages/CustomerService';
 import Qna from './pages/Qna';
 import About from './pages/About';
+import Secu from './pages/Secu';
+import Event from './pages/Event';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -59,6 +61,8 @@ function App() {
         <Route path='/mypage' element={<MyPage userInfo={userInfo}/>} />
         <Route path='/qna' element={<Qna userInfo={userInfo}/>} />
         <Route path='/about' element={<About userInfo={userInfo} />} />
+        <Route path='/secu' element={<Secu userInfo={userInfo} />} />
+        <Route path='/event' element={<Event userInfo={userInfo} />} />
         {/* <Route path='/about/:id' element={<About Latitude = {}, Longitude = {}/>} /> */}
 
         <Route path='*' element={<Main />} />
@@ -71,6 +75,8 @@ function App() {
       <Link to={'/customer'}>고객센터 </Link>
       <Link to={'/qna'}>자주묻는질문 </Link>
       <Link to={'/about'}>영업점 </Link>
+      <Link to={'/secu'}>보안센터 </Link>
+      <Link to={'/event'}>이벤트 </Link>
 
       <Footer />
 
