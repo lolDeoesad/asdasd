@@ -57,7 +57,7 @@ const Footer = () =>{
       </div>
 
       <div className='ect-info' >
-        <span style={{fontSize: "18px"}}>(주)이젠은행 ┃ 서울특별시 강서구 화곡로 149 3층 ┃ 대표: 이양정조 ┃ 개인정보관리 책임자: Elsorin ┃ 사업자등록번호 : 123-12-12345 ┃ 고객센터 : 1599-7855 </span>
+        <span style={{fontSize: "18px"}}>(주)이젠은행 ┃ 서울특별시 강서구 화곡로 149 3층 ┃ 대표: 이양정조 ┃ 개인정보관리 책임자: Elsorin ┃ 사업자등록번호 : 123-12-12345 ┃ 고객센터 : 02-2675-1750 </span>
         <span></span>
         <div style={{fontSize: "15px"}}>Copyright ©2023 EzenBank Inc. All Rights Reserved.</div>
       </div>

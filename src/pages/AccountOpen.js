@@ -12,27 +12,20 @@ function AccountOpen() {
 
   return (
     <div className="open">
-
-      <div className="header">
-        <img onClick={() => {navigate('/')}} src={process.env.PUBLIC_URL + '/img/logo.png'} alt="" />
-      </div>
-
       <div className="main">
-        <div className="">
-          <h1>계좌개설</h1>
-        </div>
+        <h3>계좌개설</h3>
         
         <div className="content">
           <div>
             <h5>어떤 용도로 통장을 사용하실 건가요?</h5>
 
               <div className="d-flex justify-content-center">              
-                <label for="form-test" className="w-50">계좌사용용도</label>
-                <Form.Select id="form-test" className="select">
-                  <option>선택해주세요</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
+                <Form.Select style={{width : '300px'}} placeholder="계좌사용용도">
+                  <option>급여 및 아르바이트</option>
+                  <option>생활비 관리</option>
+                  <option>적금 자동이체</option>
+                  <option>예금가입</option>
+                  <option>대출신청</option>
                 </Form.Select>
               </div>
           </div>
@@ -103,9 +96,9 @@ function AccountOpen() {
           <Accordion.Item eventKey="1">
             <Accordion.Header>금융실명법 설명 확인</Accordion.Header>
             <Accordion.Body>
-            금융실명거래 및 비밀보장에 관한 법률 제3조 3항에 따라 누구든지 <br />
-            불법재산의 은닉, 자금세탁 행위, 공중협박 자금조달 행위 및 강제 집행의 면탈, 그 밖의 탈법행위를 목적으로 타인의 실명으로 금융거래를 <br />
-            하여서는 아니 되며, 이를 위반 시 5년이하의 징역 또는 5천만원이하의 벌금에 처해질 수 있습니다.
+              금융실명거래 및 비밀보장에 관한 법률 제3조 3항에 따라 누구든지 <br />
+              불법재산의 은닉, 자금세탁 행위, 공중협박 자금조달 행위 및 강제 집행의 면탈, 그 밖의 탈법행위를 목적으로 타인의 실명으로 금융거래를 <br />
+              하여서는 아니 되며, 이를 위반 시 5년이하의 징역 또는 5천만원이하의 벌금에 처해질 수 있습니다.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -122,7 +115,7 @@ function AccountOpen() {
         </label> <br/> <br/>
 
         <div className="button">
-          <Button onClick={() => {
+          <Button variant="success" onClick={() => {
             if((document.querySelector('#no').checked === true) && (document.querySelector('#no2').checked === true)){
               axiosInstance.post('/account')
               // axios.post(`${process.env.REACT_APP_SERVER_URL}/account`)
@@ -140,12 +133,9 @@ function AccountOpen() {
           &nbsp;
           &nbsp;
           &nbsp;
-          <Button onClick={() => {navigate('/account')}} style={{height : '40px'}}>취소</Button>
+          <Button variant="success" onClick={() => {navigate('/account')}} style={{height : '40px'}}>취소</Button>
         </div>
       </div>
-      
-
-      
     </div>
   )
 }

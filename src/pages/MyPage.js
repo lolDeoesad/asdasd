@@ -83,11 +83,14 @@ const MyPage = ({ userInfo }) => {
                     <p>?? 뭐?</p>
                     </Modal> */}
                   </div>
-                  <div className='my_page_summary2'>
+                  <div className='my_page_summary2'> 
                     고객님의 총 계좌 수는
                     <br />
                     {userInfo.accountList ? userInfo.accountList.length : '0'}개 입니다.
-                    {/*   */}
+                    <br />
+                    <Link to="/account">
+                      
+                    </Link>
                   </div>
 
                 </div>

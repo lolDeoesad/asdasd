@@ -19,9 +19,10 @@ import Qna from './pages/Qna';
 import About from './pages/About';
 import Secu from './pages/Secu';
 import Event from './pages/Event';
+import AccountTransfer from './pages/AccountTransfer';
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
   const [userInfo, setUserInfo] = useState({
     username : ''
   });
@@ -36,7 +37,7 @@ function App() {
       // console.log(userInfo);
       // console.log(userInfo.username);
     }
-  }, [isAuth])
+  }, [isAuth]) 
 
   return (
     <div className="App">
@@ -63,6 +64,7 @@ function App() {
         <Route path='/about' element={<About userInfo={userInfo} />} />
         <Route path='/secu' element={<Secu userInfo={userInfo} />} />
         <Route path='/event' element={<Event userInfo={userInfo} />} />
+        <Route path='/transfer/:id' element={<AccountTransfer userInfo={userInfo} />} />
         {/* <Route path='/about/:id' element={<About Latitude = {}, Longitude = {}/>} /> */}
 
         <Route path='*' element={<Main />} />

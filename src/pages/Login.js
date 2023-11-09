@@ -56,7 +56,7 @@ const Login = ({setAuth}) => {
                   setAuth(true);
                   alert('로그인 성공');
                   navigate('/main');
-                }
+                } 
               }).catch(error => {
                 alert('로그인 실패');
                 console.log(error);
