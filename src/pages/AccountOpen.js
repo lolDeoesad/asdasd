@@ -123,7 +123,8 @@ function AccountOpen() {
                 alert(response.data);
                 navigate('/');
               }).catch(error => {
-                alert(`에러가 발생했습니다.`);
+                alert(`로그인을 해주세요.`);
+                navigate('/login');
               })
             } else {
               alert(`제출 실패하셨습니다.`);
