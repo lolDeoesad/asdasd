@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import Update from './pages/Update';
 import MyPage from './pages/MyPage';
 import Header from './components/Header';
-// import JoinAgree from './pages/JoinAgree';
 import Footer from './components/Footer';
 import axios from 'axios';
 import Main from './pages/Main';
