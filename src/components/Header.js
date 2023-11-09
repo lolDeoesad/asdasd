@@ -20,7 +20,7 @@ const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
           {/* <ul> */}
           <Nav.Link onClick={() => { navigate('/account') }} className="list-group-item">조회</Nav.Link>
           <Nav.Link onClick={() => { navigate('/transfer') }} className="list-group-item">이체</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">금융상품</Nav.Link>
+          <Nav.Link onClick={() => { navigate('/goods') }} className="list-group-item">금융상품</Nav.Link>
           <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">공과금</Nav.Link>
           <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">외환</Nav.Link>
 

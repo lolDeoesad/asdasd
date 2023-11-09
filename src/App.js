@@ -19,6 +19,8 @@ import About from './pages/About';
 import Secu from './pages/Secu';
 import Event from './pages/Event';
 import AccountTransfer from './pages/AccountTransfer';
+import ErrorPage from './pages/ErrorPage';
+import MoneyGoods from './pages/MoneyGoods';
 
 function App() {
   const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
@@ -64,6 +66,8 @@ function App() {
         <Route path='/secu' element={<Secu userInfo={userInfo} />} />
         <Route path='/event' element={<Event userInfo={userInfo} />} />
         <Route path='/transfer/:id' element={<AccountTransfer userInfo={userInfo} />} />
+        <Route path='/error' element={<ErrorPage userInfo={userInfo} />} />
+        <Route path='/goods' element={<MoneyGoods userInfo={userInfo} />} />
         {/* <Route path='/about/:id' element={<About Latitude = {}, Longitude = {}/>} /> */}
 
         <Route path='*' element={<Main />} />
@@ -78,6 +82,8 @@ function App() {
       <Link to={'/about'}>영업점 </Link>
       <Link to={'/secu'}>보안센터 </Link>
       <Link to={'/event'}>이벤트 </Link>
+      <Link to={'/error'}>404페이지 </Link>
+      <Link to={'/goods'}>금융상품 </Link>
 
       <Footer />
 
