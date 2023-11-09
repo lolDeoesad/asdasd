@@ -17,15 +17,16 @@ import Approval from './pages/Approval';
 import Qna from './pages/Qna';
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
   const [userInfo, setUserInfo] = useState({
     username : ''
   });
+
   
   useEffect(()=>{
     // setIsLoading(false);
     if(isAuth) {
-      axiosInstance.get('/userInfo')
+      axiosInstance.get('/user')
       .then(response => {setUserInfo(response.data);})
                   .catch(error => console.log(error));
       // console.log(userInfo);
