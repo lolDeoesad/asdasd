@@ -11,7 +11,6 @@ import Update from './pages/Update';
 import MyPage from './pages/MyPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import axios from 'axios';
 import Main from './pages/Main';
 import CustomerService from './pages/CustomerService';
 import Qna from './pages/Qna';
@@ -21,25 +20,26 @@ import Event from './pages/Event';
 import AccountTransfer from './pages/AccountTransfer';
 import ErrorPage from './pages/ErrorPage';
 import MoneyGoods from './pages/MoneyGoods';
+import Approval from './pages/Approval';
 
 function App() {
   const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
   const [userInfo, setUserInfo] = useState({
     username : ''
   });
+
   
   useEffect(()=>{
     // setIsLoading(false);
     if(isAuth) {
-      axiosInstance.get('/userInfo')
-      // axios.get(`${process.env.REACT_APP_SERVER_URL}/userInfo`)
-                  .then(response => {setUserInfo(response.data);})
-                  .catch(error => console.log(error));
+      axiosInstance.get('/user')
+        .then(response => {setUserInfo(response.data);})
+        .catch(error => console.log(error));
       // console.log(userInfo);
       // console.log(userInfo.username);
     }
-  }, [isAuth]) 
-
+  }, [isAuth])
+  
   return (
     <div className="App">
       
@@ -58,6 +58,7 @@ function App() {
         <Route path='/open' element={<AccountOpen />}/>
         <Route path='/customer' element={<CustomerService />}/>
         {/* <Route path='/agree' element={<SignupAgree/>} /> */}
+        <Route path='/qna' element={<Qna/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/update' element={<Update userInfo={userInfo} />} />
         <Route path='/mypage' element={<MyPage userInfo={userInfo}/>} />
@@ -70,7 +71,9 @@ function App() {
         <Route path='/goods' element={<MoneyGoods userInfo={userInfo} />} />
         {/* <Route path='/about/:id' element={<About Latitude = {}, Longitude = {}/>} /> */}
 
+        <Route path='/approval' element={userInfo.role=="ADMIN" ? <Approval/> : <div>인덱스</div>} />
         <Route path='*' element={<Main />} />
+        {/* <Route path='*' element={<div>인덱스</div>} /> */}
       </Routes>
       <Link to={'/signup'}>회원가입 </Link>
       <Link to={'/login'}>로그인 </Link>

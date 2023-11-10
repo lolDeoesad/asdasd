@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+
+.Approval-Container {
+  font-family: 'Nanum Gothic', sans-serif;
+  text-align: center;
+}
+
+.approval-checkbox {
+  zoom: 1.3;
+}
+
+.approval-accordion-header {
+  margin: auto;
+  width: 33%;
+  border: 1px solid #137d34;
+}
+
+.approval-accordion-body{
+  margin: auto;
+  width: 33%;
+  text-align: left;
+}

@@ -1,7 +1,6 @@
 import '../styles/Customersub.css';
 import React from 'react';
 import { Accordion } from "react-bootstrap";
-import axios from "axios";
 import { Link } from 'react-router-dom';
 
 const Customersub = () => {
