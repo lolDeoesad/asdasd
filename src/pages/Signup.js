@@ -1,5 +1,5 @@
 import { Accordion } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
@@ -7,6 +7,7 @@ import DaumMap from '../components/DaumMap';
 import '../styles/Signup.css'
 
 function Signup() {
+ 
 
   const [domin, setDomin] =useState(''); // 도메인 값 담아줄 스테이트
   const [email, setEmail] = useState('')  // 이메일 값 담아줄 스테이트
@@ -28,7 +29,10 @@ function Signup() {
 
   const [checkBtn, setCheckBtn] = useState(true);   //회원가입 버튼 활성화 시켜줄 스테이트 전부 false면 활성화
 
+  const isMounted = useRef(false);  // useEffect 첫 렌더링 막을때 사용할 useRef 
+
   const [userInfo, setUserInfo] = useState({  //인풋으로 입력받은 값 저장할 유저정보 스테이트  
+
     username : '', 
     fname : '',
     password : '',
@@ -53,6 +57,14 @@ function Signup() {
       jobAddress:jobAddress
     })
   }, [address, jobAddress])
+
+  useEffect(() => {   // useRef 이용해서 첫 렌더링 막고 address변경되면 실행 
+    if(isMounted.current) {
+      document.querySelector("#ad").focus();
+    } else {
+      isMounted.current = true;
+    }
+  }, [address])
 
  useEffect(() => {         // 버튼 활성화 useEffect
   if(!isId && !isFname && !isPw && !isPwCheck && !isIdNo && !isTel && !isCountry && !isaddress && !isTerms ) {
@@ -157,7 +169,7 @@ function Signup() {
     setIsPwCheck(false);
   }
 
-  const idNumRegEX = (e) => {             // 
+  const idNumRegEX = (e) => {             
     e.target.value = e.target.value
     .replace(/^(\d{0,6})(\d{0,7})$/g, '$1-$2').replace(/-{1,2}$/g, '');
   }
@@ -211,7 +223,7 @@ function Signup() {
     .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`); 
   }
 
-  const phRegEx2 = () => {                      //  정규식에 
+  const phRegEx2 = () => {                     
     const phoneReg = /^\d{2,3}-\d{3,4}-\d{4}$/;
     if(!phoneReg.test(userInfo.phone)) {
       let copy = [...error];
@@ -236,7 +248,10 @@ function Signup() {
   }
 
   const addressCheck = (e) => {       // 주소검사 
-    if(e.target.value === '' || address === '') {   
+    if(e.target.value === '' || address === '') {  
+      let copy = [...error];
+      copy[6] = '주소는 반드시 입력해 주세요'; 
+      setError(copy);
       setIsAddress(true);
       return;
     } else if (e.target.value !== '' || address !== '')
@@ -252,7 +267,7 @@ function Signup() {
      setIsTerms(false);
     }
   }
-
+ 
  console.log(userInfo);
  console.log(isId, isFname, isPw, isPwCheck, isIdNo, isCountry, isaddress, isTel, isTerms ,checkBtn);
 
@@ -309,7 +324,7 @@ function Signup() {
 
         <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <span className="input-group-text" id="basic-addon1">휴대폰번호</span>
-          <input type="text" class="form-control" name="phone" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onInput={phRegEx} maxLength={13} onBlur={phRegEx2} />
+          <input type="text" className="form-control" name="phone" placeholder="필수입력" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onInput={phRegEx} maxLength={13} onBlur={phRegEx2} />
         </div>
         { isTel? <span id="error">{error[5]}</span> : <span id="proper">{proper[5]}</span> }
 
@@ -322,19 +337,19 @@ function Signup() {
         </div>
 
         <hr />
-
+       
         <h3 className='update-title'>자택주소</h3>
 
         <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-          <DaumMap setAddress={setAddress}/>
-          <input type="text" id="ad" class="form-control" placeholder="주소" name="address" value={address} readOnly aria-label="Username" aria-describedby="basic-addon1" onBlur={addressCheck}/>
+          <DaumMap setAddress={setAddress} />
+          <input type="text" id="ad" class="form-control" placeholder="주소(필수)" name="address" value={address} readOnly aria-label="Username" aria-describedby="basic-addon1" onBlur={addressCheck} />
         </div>
 
         <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-          <input type="text" class="form-control" placeholder="상세주소" name="addressDetail" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={addressCheck} />
+          <input type="text" class="form-control" placeholder="상세주소(필수)" name="addressDetail" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} onBlur={addressCheck} />
         </div>
-
+        { isaddress? <span id="error">{error[6]}</span> : '' }
         <hr />
 
         <h3 className='update-title'>직장정보</h3>
@@ -349,7 +364,7 @@ function Signup() {
         </div>
         <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
           <DaumMap setAddress={setJobAddress} />
-          <input type="text" class="form-control" placeholder="주소" name="jobAddress" value={jobAddress} readOnly aria-label="Username" aria-describedby="basic-addon1"  />
+          <input type="text" class="form-control" placeholder="주소" name="jobAddress" value={jobAddress} readOnly aria-label="Username" aria-describedby="basic-addon1" />
         </div>
 
         <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
