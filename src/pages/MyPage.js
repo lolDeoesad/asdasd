@@ -42,7 +42,7 @@ const MyPage = ({ userInfo }) => {
             <div className='mybox-bigline'>
               <div className='myloginbox'>
                 <div className='myname'>
-                  <span class="text-bold">{userInfo.fname}</span>
+                  <span className="text-bold">{userInfo.fname}</span>
                   님 반갑습니다.
                 </div>
                 <div className='mypage_total'>

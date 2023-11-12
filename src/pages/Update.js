@@ -84,42 +84,42 @@ function Update ({userInfo}) {
         <div className='update-mainbox'>
           <h2 className='update-title'><br/>회원정보수정</h2><hr />
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">아이디</span>
-            <input type="text" class="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.username} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">아이디</span>
+            <input type="text" className="form-control" name="username" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.username} />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">이름</span>
-            <input type="text" class="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.fname}  />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">이름</span>
+            <input type="text" className="form-control" name="fname" placeholder="이름을 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.fname}  />
           </div>
 
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">비밀번호</span>
-            <input type="password" class="form-control" name="password" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwChange} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">비밀번호</span>
+            <input type="password" className="form-control" name="password" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwChange} />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">비밀번호재확인</span>
-            <input type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwConfirmchange} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">비밀번호재확인</span>
+            <input type="password" className="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" onChange={handlePwConfirmchange} />
           </div>
 
           {pwError && <div style={{ color: 'red', marginBottom: '5px', }}>{pwError}</div>}
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">주민번호</span>
-            <input type="text" class="form-control" name="idNo" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.idNo} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">주민번호</span>
+            <input type="text" className="form-control" name="idNo" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.idNo} />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">회원번호</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.id} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">회원번호</span>
+            <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.id} />
           </div>
 
-          <div class="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <input type="text" class="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} value={user.email} />
-            <div class="input-group-text" id="basic-addon2">
+          <div className="input-group mb-3 usermail-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <input type="text" className="form-control" name="email" placeholder="이메일주소를 입력해주세요" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={changeHandler} value={user.email} />
+            <div className="input-group-text" id="basic-addon2">
 
               <Form.Select aria-label="Default select example">
                 <option>도메인</option>
@@ -132,15 +132,15 @@ function Update ({userInfo}) {
           </div>
 
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">휴대폰번호</span>
-            <input type="text" class="form-control" name="phone" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.phone} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">휴대폰번호</span>
+            <input type="text" className="form-control" name="phone" placeholder="번호를 입력해주세요" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.phone} />
           </div>
           {/* <li style={{ marginBottom: "5px", color: "red" }}>●입출금 내역 문자 알림은 ‘알림설정 - 입출금 문자 - 조회/변경’ 에서 변경할 수 있습니다.</li> */}
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">국적</span>
-            <input type="text" class="form-control" name="country" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.country} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">국적</span>
+            <input type="text" className="form-control" name="country" placeholder="" aria-label="Username" aria-describedby="basic-addon1" readOnly onChange={changeHandler} value={user.country} />
           </div>
 
           <hr />
@@ -149,43 +149,43 @@ function Update ({userInfo}) {
           <h3 className='update-title'>자택주소/전화번호</h3>
 
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <DaumMap setAddress={setAddress} />
-            <input type="text" class="form-control" placeholder="주소" name="address" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.address} />
+            <input type="text" className="form-control" placeholder="주소" name="address" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.address} />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            {/* <span class="input-group-text" id="basic-addon1">주소</span> */}
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.addressDetail} />
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            {/* <span className="input-group-text" id="basic-addon1">주소</span> */}
+            <input type="text" className="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" onChange={changeHandler} value={user.addressDetail} />
           </div>
 
           <hr />
           <h3 className='update-title'>직장정보</h3>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">직장명</span>
-            <input type="text" class="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobName}/>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">직장명</span>
+            <input type="text" className="form-control" name="job" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobName}/>
           </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">부서명</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.teamName}/>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">부서명</span>
+            <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.teamName}/>
           </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
             <DaumMap setAddress={setJobAddress} />
-            <input type="text" class="form-control" placeholder="주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddress} />
+            <input type="text" className="form-control" placeholder="주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddress} />
           </div>
 
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <input type="text" class="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddressDetail}/>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <input type="text" className="form-control" placeholder="상세주소" aria-label="Username" aria-describedby="basic-addon1" value={user.jobAddressDetail}/>
           </div>
-          <div class="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
-            <span class="input-group-text" id="basic-addon1">직장연락처</span>
-            <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobPhone}/>
+          <div className="input-group mb-3 username-box" style={{ width: "50%", height: "50px", borderRadius: "10px" }}>
+            <span className="input-group-text" id="basic-addon1">직장연락처</span>
+            <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value={user.jobPhone}/>
           </div>
           {/* <input type="hidden" name="job"/> */}
 
-          <button type="button" class="btn btn-light" href="/mypage">취소</button>
-          <button type="submit" class="btn btn-success" onClick={handleSave}>저장</button>
+          <button type="button" className="btn btn-light" href="/mypage">취소</button>
+          <button type="submit" className="btn btn-success" onClick={handleSave}>저장</button>
           {/* <a className="btn btn-success" href="/mypage">저장</a> */}
 
         </div>

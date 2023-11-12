@@ -24,7 +24,7 @@ function DaumMap({setAddress}) {
      open({onComplete: handleComplete});
   }
   
-  return <button type="button" onClick={handleClick}>우편번호, 주소 찾기</button>
+  return <button type="button" className="btn btn-success" style={{width:'120px', height:'58px', marginRight:'10px'}} onClick={handleClick}>우편 번호<br/> 주소 찾기</button>
  }
 
 export default DaumMap;

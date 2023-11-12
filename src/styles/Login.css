@@ -1,99 +1,29 @@
-*{
-  box-sizing: border-box;
-}
-
-.login-container{
-  width: 100%;
-  text-align: center;
-}
-
-.login-box{
+.Login {
   width: 600px;
   height: 500px;
-  border: 1px solid black;
+  border: 1px solid #137d34;
   border-radius: 30px;
-  /* background-color: aquamarine; */
-  margin: 0 auto;
-  /* margin-top: 100px; */
-  margin-top: 150px;
-  margin-bottom: 150px;
 }
 
-.login-title{
-  text-align: center;
-  margin-top: 50px;
-}
-
-.sub-title{
-  margin-bottom: 50px;
-}
-
-.sub-join{
-  margin-top: 50px;
-  display: flex;
-}
-
-/* .footer-container{
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 150px;
-  padding: 15px 5px 10px;
-  border-style: solid none none none;
-  border-bottom-color: #137d34;
-} */
-
-.login-input{
+.form-floating{
   width: 400px;
-  margin: auto;
-}
-
-.loginBtn{
-  margin-top: 50px;
-  width: 100px;
-}
-
-strong{
-  color: #137d34;
 }
 
 .login-btn{
-  margin-top: 30px;
-  border-radius: 5px;
   width: 250px;
-  height: 50px;
-  color: white;
+  height: 100px !important;
+}
+
+.Login span{
+  font-size: 1.25rem;
+}
+
+.form-check-input:checked {
   background-color: #137d34;
-}
-
-.member-sign li{
-  display: inline-block;
-  vertical-align: middle;
-  
-}
-
-span{
-  font-size: 20px;
-}
-  
-.joinbox{
-  margin-top: 30px;
-  text-decoration: none;
-}
-
-.join-btn{
-  text-decoration : none;
+  border-color: #CDEDD7;
 }
 
 
-.findbox{
-  margin-top: 10px;
+.form-check {
+  text-align: left;
 }
-
-.find-btn{
-  text-decoration : none;
-}
-
-
-

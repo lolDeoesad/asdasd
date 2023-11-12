@@ -1,108 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-/* font-family: 'Nanum Gothic', sans-serif; */
-
-*{
-  box-sizing: border-box;
+.Header {
+  background : white;
+  border-bottom: 1px solid #137d34;
 }
 
-.headers-container{
-  /* display: flex; */
-  justify-content: center;
-  width: 100%;
-  height: 150px;
-  padding: 15px 5px 10px;
-  font-family: 'Nanum Gothic', sans-serif;
-  
-  /* border: none; */
-  /* background-color: #137d34; */
-  /* position: fixed; */
-}
-
-.headers-box{
-  background: white;
-  font-size: 20px;
-  height: 150px;
-  left: 0;
-  padding: 15px 5px 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  border-style: none none solid none;
-  border-bottom-color: #137d34;
-  
-}
-
-.logo{
-  width: 150px;
-  height: 50px;
-  margin-top: 20px;
-  position: sticky;
-}
-
-.header-nav {
-  align-items: center;
-  cursor: pointer;
-  
-  margin-right: 50px;
-}
-
-/* .headers-nav ul {
-  list-style: none;
-} */
-
-.nav-link {
-  /* margin-top: 20px; */
-  float: left;
-  margin-right: 50px;
-  font-size: 20px;
-  display: flex;
-  position: sticky;
-}
-
-.header-nav {
+.Header > .logo-img {
   height: 100px;
-  width: 50%;
-  position: relative;
 }
 
-.nav-join{
-  
-  position: absolute;
-  right: 200px;
-  
+.Header > .header-nav {
+  font-size: 1.25rem;
 }
-
-
-.headers-box, .headers-nav{
-  /* align-items: center; */
-  /* display: flex; */
-  justify-content: center;
-}
-
-
-
-/* .nav-join button{
-  text-transform: none;
-  border-radius: 0;
-  height: 40px;
-  width: 100px;
-  border-radius: 10px;
-  background: #137d34;
-  font-family: 'Tilt Neon', sans-serif;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

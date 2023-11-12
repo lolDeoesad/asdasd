@@ -1,9 +1,6 @@
 import React from 'react';
 // import '../styles/Main.css';
 import Carousel from 'react-bootstrap/Carousel';
-import ezenBnn1 from '../assets/ezenBnn1.png';
-import ezenBnn2 from '../assets/ezenBnn2.png';
-import ezenBnn3 from '../assets/ezenBnn3.png';
 
 function CarouselBN() {
   return (

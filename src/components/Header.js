@@ -1,52 +1,43 @@
-import { Nav } from 'react-bootstrap';
-import '../styles/Header.css';
 import React from 'react';
-import { Link, useNavigate, Route, BrowserRouter as Router } from 'react-router-dom';
-import Main from '../pages/Main';
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/Header.css';
 
+const Header = ({ isAuth, setAuth, setUserInfo }) => {
+  const logoutHandler = () => {
+    sessionStorage.removeItem('jwt');
+    setAuth(false);
+    setUserInfo({ username: '' });
+  };
 
-const Header = ({ isAuth, setAuth, userInfo, setUserInfo }) => {
-
-  const navigate = useNavigate();
   return (
-    <div className='headers-container'>
-      <div className='headers-box'>
-        <div className='logo'>
-            <Link to="/main">
-              <img src={process.env.PUBLIC_URL + '/img/ezenbank.png'} alt="EzenBank" />
-            </Link>
-        </div>
-        <div className='d-flex headers-nav'>
-          {/* <ul> */}
-          <Nav.Link onClick={() => { navigate('/account') }} className="list-group-item">조회</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/transfer') }} className="list-group-item">이체</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/goods') }} className="list-group-item">금융상품</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">공과금</Nav.Link>
-          <Nav.Link onClick={() => { navigate('/main') }} className="list-group-item">외환</Nav.Link>
+    <div className='Header fixed-top d-flex justify-content-between align-items-center py-2 pe-5'>
 
-          <div className='nav-join' style={{ float: "right" }}>
-          {
-              isAuth ? <Link to="/mypage" onClick={() => {
-                
-              }} className='btn btn-success'>마이페이지</Link>
-                // sessionStorage.removeItem('jwt');
-                // setAuth(false);
-                // setUserInfo({ username: '' });
-                : <Link to='/signup' className='btn btn-success'>회원가입</Link>
-            } 
-            
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {
-              isAuth ? ( <Link to="/main" onClick={() => {
-                sessionStorage.removeItem('jwt');
-                setAuth(false);
-                setUserInfo({ username: '' });
-              }}className='btn btn-success'>로그아웃</Link>
-              ) : (<Link to='/login' className='btn btn-success'>로그인</Link>)
-            }
-          </div>
-        </div>
+      <Link to="/" className='logo-img ps-3 d-flex align-items-center'>
+        <img src={process.env.PUBLIC_URL + '/logo.png'} alt="EzenBank" />
+      </Link>
+
+      <div className='header-nav d-flex'>
+        <Link className='me-5 text-nowrap' to="/account">조회</Link>
+        <Link className='me-5 text-nowrap' to="/transaction">이체</Link>
+        <Link className='me-5 text-nowrap' to="/finance">금융상품</Link>
+        <Link className='me-5 text-nowrap' to="/bill">공과금</Link>
+        <Link className='me-5 text-nowrap' to="/exchange">외환</Link>
       </div>
+
+      <div className='Header-Btn me-4'>
+        {
+          isAuth
+          ? <>
+              <Link to="/user/mypage" className='header-btn btn btn-success me-4 my-1'>마이페이지</Link>
+              <Link to="/" className='header-btn btn btn-success me-4 my-1' onClick={logoutHandler}>로그아웃</Link>
+            </>
+          : <>
+              <Link to='/user/signup' className='header-btn btn btn-success me-4 my-1'>회원가입</Link>
+              <Link to='/login' className='header-btn btn btn-success me-4 my-1'>로그인</Link>
+            </>
+        }
+      </div>
+      
     </div>
   )
 }

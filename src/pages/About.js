@@ -1,15 +1,11 @@
 import '../styles/About.css';
 import { useEffect, useState } from "react";
-import { Container, Nav } from "react-bootstrap";
 import Customersub from '../components/Customersub';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MapList } from '../constants/MapList';
-const { kakao } = window;
-// const LATITUDE = 37.5412952;
-// const LONGITUDE = 126.8381811;
-// const POSITION_URL = 'https://map.kakao.com/link/to/26717800'
 
 const About = () => {
+  const { kakao } = window;
   const [id, setId] = useState(0);
   useEffect(() => {
     const LATITUDE = MapList[id].latitude;

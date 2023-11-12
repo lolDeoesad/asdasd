@@ -1,8 +1,8 @@
 import Customersub from '../components/Customersub';
-import '../styles/Secu.css';
+import '../styles/Security.css';
 import React from 'react';
 
-const Secu = () => {
+const Security = () => {
   return (
     <div className='Secu-container'>
       <div className='Secu-leftbox'>
@@ -56,4 +56,4 @@ const Secu = () => {
   )
 }
 
-export default Secu;
+export default Security;
