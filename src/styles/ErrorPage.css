@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+
 .error-container{
   width: 1500px;
   /* height: 100%; */
@@ -7,12 +10,17 @@
 }
 
 .error-box{
-  margin: 100px 0 30px 500px;
-  font-family: 'Nanum Gothic', sans-serif;
+  margin: 80px 0 30px 580px;
+  font-family: 'Nanum Gothic';
   /* display: flex; */
+}
+
+.error-box img{
+  width: 400px;
+  height: 400px;
 }
 
 .error-text{
   text-align: center;
-  margin: 50px 0 300px 50px;
+  margin: 10px 0 100px 50px;
 }

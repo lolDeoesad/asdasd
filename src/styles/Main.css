@@ -95,7 +95,7 @@
 }
 
 .icons p {
-  display: none; /* 초기에는 아이콘 아래에 텍스트를 숨김 */
+  display: none; 
 }
 
 .icons:hover p {

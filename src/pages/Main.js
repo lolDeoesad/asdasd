@@ -22,7 +22,7 @@ const Main = () => {
             <CarouselBN />
           </div>
         </div>
-        &nbsp;&nbsp;
+        &nbsp;&nbsp; 
         <div className='mains-box2'>
           <div className='mains-btn1'>
             {/* <img src='../assets/logo.png' className="colored-icon" alt="icon" />
