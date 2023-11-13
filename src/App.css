@@ -24,8 +24,10 @@ a {
 .App .main {
   background: white;
   padding-top: calc(120px + 3rem);
+  /* margin-top: 100px; */
   padding-bottom: calc(3rem);
   min-height: calc(100vh);
+  width: 1800px;
   /* min-height: calc(100vh - 300px); */
 }
 

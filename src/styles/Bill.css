@@ -1,0 +1,86 @@
+.bill-container{
+  width: 1000px;
+  height: 1000px;
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  /* display: flex; */
+  margin: 100px 300px 100px 350px;
+  justify-content: center; 
+} 
+
+.bill-text1{
+  margin-bottom: -60px;
+}
+
+.bill-container hr{
+  width: 1000px;
+}
+
+.bill-icon{
+  width: 120px;
+  height: 120px;
+  display: flex;
+}
+
+.bill-icon img{
+  margin-right: 100px;
+  width: 80px;
+  height: 80px;
+}
+
+.bills{
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s;
+  display: inline;
+  align-items: center;
+  grid-template-columns: repeat(7,1fr);
+  margin-top: 40px;
+  /* background-color: #CDEDD7; */
+}
+
+.auto-bill{
+  display: flex;
+}
+
+.bill-middlebox {
+  width: 1000px;
+  /* border: 1px solid salmon;  */
+  width: 60%;
+  margin: 80px 100px 50px  -30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 3px;
+}
+
+.bill-bottombox{
+  width: 1000px;
+  
+}
+
+.bill-time{
+  display: grid;
+}
+
+.bill-inner{
+  flex: 1;
+  list-style-type: none;
+  font-size: 15px;
+}
+
+#bill-nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #137d34;
+  margin-bottom: 10px;
+}
+
+.bill-nav-inner li {
+  font-weight: lighter;
+  font-size: 12px;
+  /* margin: 0 100px  0 100px; */
+}
+
+.time1{
+  width: 500px;
+  /* display: flex; */
+}

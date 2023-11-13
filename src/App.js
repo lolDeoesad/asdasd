@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import axiosInstance from './utils/axiosInstance';
 
@@ -50,7 +50,8 @@ function App() {
     <div className="App">
       
       <Header isAuth={isAuth} setAuth={setAuth} setUserInfo={setUserInfo}/>
-      <Container className='main d-flex justify-content-center'>
+      <div className='main d-flex justify-content-center'>
+        
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/login' element={<Login setAuth={setAuth}/>}/>
@@ -81,7 +82,22 @@ function App() {
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='*' element={<ErrorPage/>}/>
         </Routes>
-      </Container>
+        
+
+      </div>
+        <Link to={'/signup'}>회원가입 </Link>
+      <Link to={'/login'}>로그인 </Link>
+      <Link to={'/update'}>정보수정 </Link>
+      <Link to={'/mypage'}>마이페이지 </Link>
+      <Link to={'/account'}>계좌 </Link>
+      <Link to={'/customer'}>고객센터 </Link>
+      <Link to={'/qna'}>자주묻는질문 </Link>
+      <Link to={'/about'}>영업점 </Link>
+      <Link to={'/secu'}>보안센터 </Link>
+      <Link to={'/event'}>이벤트 </Link>
+      <Link to={'/error'}>404페이지 </Link>
+      <Link to={'/goods'}>금융상품 </Link>
+      <Link to={'/bill'}>공과금 </Link>
       <Footer/>
 
     </div>
