@@ -28,6 +28,7 @@ a {
   padding-bottom: calc(3rem);
   min-height: calc(100vh);
   /* min-height: calc(100vh - 300px); */
+  margin: auto;
 }
 
 .header-btn {
@@ -68,4 +69,12 @@ input {
 
 .accordion-body {
   background: white;
+  text-align: left;
+}
+
+.mainBorder {
+  width: 80%;
+  border-radius: 30px;
+  border: 1px solid #137d34;
+  /* background-color: #CDEDD7; */
 }

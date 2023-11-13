@@ -63,6 +63,7 @@ function App() {
 
           <Route path='/user/mypage' element={isAuth? <MyPage userInfo={userInfo}/> : <Invalid/>}/>
           <Route path='/user/approval' element={userInfo.role==="ADMIN" ? <Approval/> : <Invalid/>}/>
+          {/* <Route path='/user/approval' element={<Approval/>}/> */}
           <Route path='/account' element={isAuth? <AccountList userInfo={userInfo}/> : <Invalid/>}/>
           <Route path='/account/detail' element={isAuth? <AccountSearch/> : <Invalid/>}/>
           <Route path='/account/open' element={isAuth? <AccountOpen setUpdate={setUpdate}/> : <Invalid/>}/>
@@ -86,7 +87,6 @@ function App() {
         </Routes>
       </div>
       <Footer/>
-
     </div>
   );
 }
