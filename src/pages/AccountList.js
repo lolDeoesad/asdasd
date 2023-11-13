@@ -5,7 +5,7 @@ import axiosInstance from "../utils/axiosInstance";
 
 function AccountList({userInfo}) {
   const navigate = useNavigate();
-  const AccountList = userInfo.AccountList;
+  const AccountList = userInfo.accountList;
   return (
     <div className="account">
       <h3>계좌목록</h3>
@@ -36,9 +36,7 @@ function AccountList({userInfo}) {
                           .then(response => { 
                             alert(response.data);
                             window.location.replace("/account");
-                          }).catch(error => {
-                            console.log(error);
-                          })
+                          }).catch(error => console.log(error))
                       } else {
                         alert('잔액이 남아있어 해지를 할 수 없습니다.');
                       }
@@ -52,7 +50,7 @@ function AccountList({userInfo}) {
           }
         </tbody>
       </table> <br/>
-      <Button variant="success" onClick={() => {navigate('/open')}}>계좌개설신청</Button>
+      <Button variant="success" onClick={() => {navigate('/account/open')}}>계좌개설신청</Button>
     </div>
   )
 

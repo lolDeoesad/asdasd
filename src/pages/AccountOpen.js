@@ -4,9 +4,8 @@ import Form from 'react-bootstrap/Form';
 import '../styles/AccountOpen.css';
 import Accordion from 'react-bootstrap/Accordion';
 import axiosInstance from "../utils/axiosInstance";
-import axios from "axios";
 
-function AccountOpen() {
+function AccountOpen({setUpdate}) {
 
   const navigate = useNavigate();
 
@@ -35,7 +34,7 @@ function AccountOpen() {
           <h5>타인으로부터 통장대여 요청을 받은 사실이 있나요?</h5>
           <div className="radio">
             <label>
-              <input
+              <input 
                 id="yes"
                 value="yes"
                 name="select"
@@ -118,21 +117,13 @@ function AccountOpen() {
           <Button variant="success" onClick={() => {
             if((document.querySelector('#no').checked === true) && (document.querySelector('#no2').checked === true)){
               axiosInstance.post('/account')
-              // axios.post(`${process.env.REACT_APP_SERVER_URL}/account`)
-              .then(response => {
-                alert(response.data);
-                navigate('/');
-              }).catch(error => {
-                alert(`에러가 발생했습니다.`);
-              })
-            } else {
+                .then(response => {
+                  setUpdate(false);
+                  navigate('/account');
+                }).catch(error => alert(`에러가 발생했습니다.`))
+            } else
               alert(`제출 실패하셨습니다.`);
-            }
-            
-          }} style={{height : '40px'}}>제출</Button>
-          &nbsp;
-          &nbsp;
-          &nbsp;
+          }}>제출</Button>
           <Button variant="success" onClick={() => {navigate('/account')}} style={{height : '40px'}}>취소</Button>
         </div>
       </div>

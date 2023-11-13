@@ -29,20 +29,22 @@ import Exchange from './pages/Exchange';
 import FindIdPw from './pages/FindIdPw';
 import Bill from './pages/Bill';
 import PleaseWait from './pages/PleaseWait';
+import PlaySudoku from './pages/PlaySudoku';
 
 function App() {
   const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
+  const [isUpdate, setUpdate] = useState(false);
   const [userInfo, setUserInfo] = useState({
     username : ''
   });
   
   useEffect(() => {
-    if(isAuth) {
+    if(isAuth && !isUpdate) {
       axiosInstance.get('/user')
-        .then(response => setUserInfo(response.data))
+        .then(response => {setUserInfo(response.data); setUpdate(true);})
         .catch(error => setAuth(false));
     }
-  }, [isAuth])
+  }, [isAuth, isUpdate])
   
   return (
     <div className="App">
@@ -60,7 +62,7 @@ function App() {
           <Route path='/user/approval' element={userInfo.role==="ADMIN" ? <Approval/> : <Invalid/>}/>
           <Route path='/account' element={isAuth? <AccountList userInfo={userInfo}/> : <Invalid/>}/>
           <Route path='/account/detail' element={isAuth? <AccountSearch/> : <Invalid/>}/>
-          <Route path='/account/open' element={isAuth? <AccountOpen/> : <Invalid/>}/>
+          <Route path='/account/open' element={isAuth? <AccountOpen setUpdate={setUpdate}/> : <Invalid/>}/>
           <Route path='/transaction/:id' element={isAuth? <AccountTransfer userInfo={userInfo}/> : <Invalid/>}/>
           <Route path='/transaction' element={isAuth? <AccountList/> : <Invalid/>}/>
 
@@ -72,7 +74,8 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/security' element={<Security/>}/>
           <Route path='/event' element={<Event/>}/>
-
+          <Route path='/sudoku' element={<PlaySudoku />}/>
+          
           <Route path='/wait' element={<PleaseWait/>}/>
           <Route path='/invalid' element={<Invalid/>}/>
           <Route path='/error' element={<ErrorPage/>}/>
