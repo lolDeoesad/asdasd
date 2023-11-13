@@ -1,60 +1,30 @@
-import { Button, Nav } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import '../styles/AccountList.css';
-import axiosInstance from "../utils/axiosInstance";
+import { Container, Row } from "react-bootstrap";
+import AccountListCard from "../components/AccountListCard";
+import AccountOpenCard from "../components/AccountOpenCard";
+import { useState } from "react";
 
-function AccountList({userInfo}) {
-  const navigate = useNavigate();
-  const AccountList = userInfo.accountList;
+function AccountList({userInfo, setUpdate, setAccountInfo, accountInfo}) {
+  const accountList = userInfo.accountList;
+  const [showOpenAccountOnly, setShowOpenAccountOnly] = useState(true);
+
   return (
-    <div className="account">
-      <h3>계좌목록</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>계좌번호</th>
-            <th>회원번호</th>
-            <th>잔액</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div className="AccountList mainBorder p-5">
+      <h2 className='my-2 fontColor1'>계좌목록</h2>
+      <hr style={{width:'100%'}}/>
+      <div className="text-start">
+      <input id="showOpenAccountOnly" className="me-2" type="checkbox" onClick={()=>setShowOpenAccountOnly(!showOpenAccountOnly)} checked={!showOpenAccountOnly}/>
+      <label for="showOpenAccountOnly">해지계좌 포함 조회</label>
+      </div>
+      <Container>
+        <Row>
+          <AccountOpenCard/>
           {
-            AccountList && AccountList.map((accountList, i) => {
-              return (
-                <tr key={i}>
-                  <td>
-                    <Nav.Link onClick={() => {navigate(`/transfer/${accountList.id}`)}}>
-                      {accountList.id}
-                    </Nav.Link>
-                  </td>
-                  <td>{accountList.userid}</td>
-                  <td>{accountList.balance}</td>
-                  <td><Button variant="success" className="close" onClick={() => {
-                    if(window.confirm("정말로 해지하시겠습니까?")) {
-                      if(accountList.balance === 0) {
-                        axiosInstance.delete('/account', {params : {'id':accountList.id}})
-                          .then(response => { 
-                            alert(response.data);
-                            window.location.replace("/account");
-                          }).catch(error => console.log(error))
-                      } else {
-                        alert('잔액이 남아있어 해지를 할 수 없습니다.');
-                      }
-                    } else {
-                      alert("해지를 취소하셨습니다.");
-                    }
-                  }}>계좌해지</Button></td>
-                </tr>
-              )
-            })
+            accountList && 
+            accountList.map((account, idx) => <AccountListCard account={account} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo} showOpenAccountOnly={showOpenAccountOnly} idx={idx} key={account.id}/>)
           }
-        </tbody>
-      </table> <br/>
-      <Button variant="success" onClick={() => {navigate('/account/open')}}>계좌개설신청</Button>
+        </Row>
+      </Container>
     </div>
   )
-
-
 }
-
 export default AccountList;

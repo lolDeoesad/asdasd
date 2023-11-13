@@ -1,0 +1,7 @@
+.PlaySudoku * {
+  text-align: center;
+  border-collapse : collapse !important;
+  font-size: 12px !important;
+  margin: 0;
+  padding: 0;
+}

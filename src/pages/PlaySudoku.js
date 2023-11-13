@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { PROBLEM_SETS } from '../constants/problemSet';
 import { useState } from 'react';
-
+import '../styles/PlaySudoku.css'
 const PlaySudoku = () => {
   const IMG_PATH = 'https://20230601sy.github.io/0810/src/assets/';
   const [currentStage, setCurrentStage] = useState(PROBLEM_SETS.Expert01);
@@ -20,11 +20,11 @@ const PlaySudoku = () => {
             { [[1, 2, 3], [4, 5, 6], [7, 8, 9]].map(rowArr => (
               <tr>
                 { rowArr.map(nCol => (
-                  <td style={{border:'1px solid'}}> 
+                  <td style={{border:'1px solid'}} className='p-1'> 
                     {
                       item[`block${nCol}`]?.length 
                       ? <Box data={item[`block${nCol}`]}/>
-                      : <div data-block1={item.block} data-block2={`block${nCol}`} style={{width:'18px', height:'18px'}} onClick={blockHandler}>
+                      : <div data-block1={item.block} data-block2={`block${nCol}`} style={{width:'12px', height:'18px'}} className='m-auto' onClick={blockHandler}>
                           {item[`block${nCol}`] ? item[`block${nCol}`] : ""}
                         </div> 
                     } 
@@ -99,7 +99,7 @@ const PlaySudoku = () => {
   }
   return(
     <div className="PlaySudoku">
-      <Container className='mt-5'>
+      <Container className='mt-0'>
         <Row>
           <Col>
             <div className='mb-5' style={{height:'150px', width:"1000px", overflow:'hidden'}}>
@@ -108,24 +108,18 @@ const PlaySudoku = () => {
           </Col>
         </Row>
         <Row>
+          <Col></Col>
           <Col className='d-flex justify-content-center'>
             <Box data={currentStage}/>
           </Col>
-        </Row>
-        <Row>
-          <Col className='d-flex justify-content-center'>
-            { status }
-          </Col>
+          <Col></Col>
         </Row>
       </Container>
-      {/* <div className="game">
-        <div className="game-board">
-          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-        </div>
-        <div className="game-info">
-          <ol>{moves}</ol>
-        </div>
-      </div> */}
+      {
+        status
+        ? <div class="alert alert-success mt-3 fontColor1" style={{height:'50px', lineHeight:'50px'}} role="alert">{ status }</div>
+        : <div style={{height:'50px'}}></div>
+      }
     </div>
   );
 }

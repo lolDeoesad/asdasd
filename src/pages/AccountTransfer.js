@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
-import '../styles/AccountTransfer.css';
 import { useParams } from "react-router-dom";
 
 function AccountTransfer() {

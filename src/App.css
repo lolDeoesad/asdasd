@@ -17,15 +17,14 @@ a {
   text-decoration: none;
 }
 
-.App {
+.App, .AccountOpenCard {
   background: #CDEDD7;
 }
 
-.App .main {
+.App > .main {
   background: white;
   width: 1600px;
   padding-top: calc(120px + 3rem);
-  /* margin-top: 100px; */
   padding-bottom: calc(3rem);
   min-height: calc(100vh);
   width: 1600px;
@@ -71,4 +70,10 @@ input {
 .accordion-body {
   text-align: left;
   background: white;
+}
+/* p-5 와 같이 사용 className="mainBorder p-5" */
+.mainBorder { 
+  width: 80%;
+  border-radius: 30px;
+  border: 1px solid #137d34;
 }
