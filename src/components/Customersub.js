@@ -39,7 +39,7 @@ const Customersub = () => {
         </Accordion>
 
         <Accordion defaultActiveKey="0" flush style={{marginBottom: "10px"}}>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="2">
             <Accordion.Header><strong>영업점</strong></Accordion.Header>
             <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
@@ -50,7 +50,7 @@ const Customersub = () => {
         </Accordion>
 
         <Accordion defaultActiveKey="0" flush style={{marginBottom: "10px"}}>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="3">
             <Accordion.Header><strong>새소식/이벤트</strong></Accordion.Header>
             <Link to="/event" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
@@ -78,7 +78,7 @@ const Customersub = () => {
         <Accordion defaultActiveKey="0" flush style={{marginBottom: "10px"}}>
           <Accordion.Item eventKey="1">
             <Accordion.Header><strong>이용안내</strong></Accordion.Header>
-            <Link to="/secu" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/security" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
                 보안센터
               </Accordion.Body>

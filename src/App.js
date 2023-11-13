@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import axiosInstance from './utils/axiosInstance';
 
@@ -52,13 +52,13 @@ function App() {
   return (
     <div className="App">
       
-      <Header isAuth={isAuth} setAuth={setAuth} setUserInfo={setUserInfo} setUpdate={setUpdate}/>
-      <div className='main d-flex justify-content-center align-items-center'>
+      <Header isAuth={isAuth} setAuth={setAuth} setUserInfo={setUserInfo}/>
+      <Container className='main d-flex justify-content-center'>
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/login' element={<Login setAuth={setAuth} setUpdate={setUpdate}/>}/>
           <Route path='/user/signup' element={<Signup/>}/>
-          <Route path='/user/update' element={<UserUpdate userInfo={userInfo} setUpdate={setUpdate}/>}/>
+          <Route path='/user/update' element={<Update userInfo={userInfo}/>}/>
           <Route path='/user/findIdPw' element={<FindIdPw/>}/>
 
           <Route path='/user/mypage' element={isAuth? <MyPage userInfo={userInfo}/> : <Invalid/>}/>
@@ -84,7 +84,7 @@ function App() {
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='*' element={<ErrorPage/>}/>
         </Routes>
-      </div>
+      </Container>
       <Footer/>
 
     </div>
