@@ -1,4 +1,4 @@
-.Signup {
+.Signup, .UserUpdate {
   width: 80%;
   border-radius: 30px;
   /* background-color: #CDEDD7; */
@@ -16,7 +16,7 @@
   /* text-align: left; */
 }
 
-.Signup .col {
+.Signup .col, .UserUpdate .col {
   padding: 0 !important;
 }
 

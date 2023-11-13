@@ -5,7 +5,7 @@ import axios from "axios";
 import '../styles/Login.css';
 import { Form } from 'react-bootstrap';
 
-const Login = ({setAuth}) => {
+const Login = ({setAuth, setUpdate}) => {
   const [member, setMember] = useState({ username : '', password : '' });
   const [remember, setRemember] = useState(false);
 
@@ -32,6 +32,7 @@ const Login = ({setAuth}) => {
         if(jwt) {
           sessionStorage.setItem('jwt', jwt);
           setAuth(true);
+          setUpdate(false);
           // alert('로그인 성공');
           navigate('/');
         } 

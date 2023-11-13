@@ -13,7 +13,6 @@ function AccountOpen({setUpdate}) {
     <div className="open">
       <div className="main">
         <h3>계좌개설</h3>
-        
         <div className="content">
           <div>
             <h5>어떤 용도로 통장을 사용하실 건가요?</h5>

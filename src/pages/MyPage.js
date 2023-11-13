@@ -52,7 +52,7 @@ const MyPage = ({ userInfo }) => {
                   <div className='my_profile_btn'>
                     <p className='text-bold' id="user_id">{userInfo.username}</p>
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
-                      <Link to='/update' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>정보수정</span></Link>
+                      <Link to='/user/update' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>정보수정</span></Link>
                     </div>
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
                       <Link to='/open' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>계좌개설</span></Link>
