@@ -20,7 +20,7 @@ const CustomerService = () => {
         <h2><strong>고객센터</strong></h2>
         <hr style={{ width: "250px" }} />
         <Accordion defaultActiveKey="0" flush style={{ marginTop: "-20px", marginBottom: "10px" }}>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="0">
             <Accordion.Header><strong>고객상담</strong></Accordion.Header>
             <Link to="/qna" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>
@@ -51,7 +51,7 @@ const CustomerService = () => {
         </Accordion>
 
         <Accordion defaultActiveKey="0" flush style={{ marginBottom: "10px" }}>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="2">
             <Accordion.Header><strong>새소식/이벤트</strong></Accordion.Header>
             <Link to="/event" style={{ textDecoration: "none", color: "black" }}>
               <Accordion.Body className='accoBady'>

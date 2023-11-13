@@ -41,7 +41,7 @@ const Main = () => {
                 <Link to="/event">
                   <img src={process.env.PUBLIC_URL + '/img/event1.png'} alt="event1" href="#" className='icons' />
                 </Link>
-                <strong>이벤트</strong>
+                <strong>이벤트</strong> 
               </div>
               <div className={`icon2 icons ${isHovered ? 'hovered' : ''}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <Link to="/security">

@@ -15,7 +15,7 @@ import AccountTransfer from './pages/AccountTransfer';
 import Approval from './pages/Approval';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Update from './pages/Update';
+// import Update from './pages/Update';
 import MyPage from './pages/MyPage';
 import CustomerService from './pages/CustomerService';
 import Qna from './pages/Qna';
@@ -30,6 +30,7 @@ import FindIdPw from './pages/FindIdPw';
 import Bill from './pages/Bill';
 import PleaseWait from './pages/PleaseWait';
 import PlaySudoku from './pages/PlaySudoku';
+import UserUpdate from './pages/UserUpdate';
 
 function App() {
   const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
@@ -50,13 +51,13 @@ function App() {
     <div className="App">
       
       <Header isAuth={isAuth} setAuth={setAuth} setUserInfo={setUserInfo}/>
-      <div className='main d-flex justify-content-center'>
+      <div className='main d-flex flex-column justify-content-center align-items-center'>
         
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/login' element={<Login setAuth={setAuth}/>}/>
           <Route path='/user/signup' element={<Signup/>}/>
-          <Route path='/user/update' element={<Update userInfo={userInfo}/>}/>
+          <Route path='/user/update' element={<UserUpdate userInfo={userInfo}/>}/>
           <Route path='/user/findIdPw' element={<FindIdPw/>}/>
 
           <Route path='/user/mypage' element={isAuth? <MyPage userInfo={userInfo}/> : <Invalid/>}/>
@@ -85,10 +86,10 @@ function App() {
         
 
       </div>
-        <Link to={'/signup'}>회원가입 </Link>
+        <Link to={'/user/signup'}>회원가입 </Link>
       <Link to={'/login'}>로그인 </Link>
-      <Link to={'/update'}>정보수정 </Link>
-      <Link to={'/mypage'}>마이페이지 </Link>
+      <Link to={'/user/update'}>정보수정 </Link>
+      <Link to={'/user/mypage'}>마이페이지 </Link>
       <Link to={'/account'}>계좌 </Link>
       <Link to={'/customer'}>고객센터 </Link>
       <Link to={'/qna'}>자주묻는질문 </Link>

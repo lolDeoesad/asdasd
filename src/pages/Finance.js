@@ -20,6 +20,11 @@ const Finance = () => {
         <h2 className='py-4 fontColor1'>대출</h2>
         <p>누구나 3분이면 한도조회 OK!<br /> 근로소득자를 위한<br /> 무보증, 무담보, 신용대출로 <br />최대 3천5백만원까지!!</p>
       </Link>
+      <Link to='/account/open' className='product py-5 ms-4'>
+      <img src={process.env.PUBLIC_URL + '/img/fund.png'} alt="fund" href="#" />
+        <h2 className='py-4 fontColor1'>펀드</h2>
+        <p>은행, 온라인, 타증권사 펀드까지<br />명쾌한 진단과 처방<br /> 이젠은행은 <br />지금 펀드 클리닉 중!!!</p>
+      </Link>
     </div>
   )
 }
