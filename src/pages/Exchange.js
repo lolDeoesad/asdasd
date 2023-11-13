@@ -4,10 +4,10 @@ import { Badge, Form } from "react-bootstrap";
 import PleaseWait from "./PleaseWait";
 
 const Exchange = () => {
-  const currencyList = ['USD', 'EUR', 'JPY', 'CNH'];
-  const nameList = ['미국 달러 USD', '유럽연합 유로 EUR', '일본 엔 JPY (100엔)', '중국 위안 CNY'];
-  const unitList = ['＄', '€', '￥', '￥'];
-  const valueList = [1, 1, 100, 1];
+  const currencyList = ['USD', 'EUR', 'JPY', 'CNH', 'TWD', 'GBP', 'AUD', 'CZK', 'CLP', 'THB'];
+  const nameList = ['미국 달러 USD', '유럽연합 유로 EUR', '일본 엔 JPY (100엔)', '중국 위안 CNY', '대만 달러 TWD', '영국 파운드 GBP', '호주 달러 AUD', '체코 코루나 CZK', '칠레 페소 CLP', '태국 바트 THB'];
+  const unitList = ['＄', '€', '￥', '￥', 'NT＄', '￡', '＄', 'Kč', 'Ch＄', '฿'];
+  const valueList = [1, 1, 100, 1, 1, 1, 1, 1, 1, 1];
 
   const [exchange, setExchange] = useState([]);
   const [set, isSet] = useState(false);
@@ -109,12 +109,12 @@ const Exchange = () => {
             return (
               <tr key={i}>
                 <td className="text-start">{name}</td>
-                <td className="text-end">{exchange[i]["basePrice"].toFixed(2)}</td>
-                <td className="text-end">{exchange[i]["cashBuyingPrice"].toFixed(2)}</td>
-                <td className="text-end">{exchange[i]["cashSellingPrice"].toFixed(2)}</td>
-                <td className="text-end">{exchange[i]["ttBuyingPrice"].toFixed(2)}</td>
-                <td className="text-end">{exchange[i]["ttSellingPrice"].toFixed(2)}</td>
-                <td className="text-end">{exchange[i]["usDollarRate"].toFixed(3)}</td>
+                <td className="text-end">{exchange[i]["basePrice"] ? exchange[i]["basePrice"].toFixed(2) : "N/A"}</td>
+                <td className="text-end">{exchange[i]["cashBuyingPrice"] ? exchange[i]["cashBuyingPrice"].toFixed(2) : "N/A"}</td>
+                <td className="text-end">{exchange[i]["cashSellingPrice"] ? exchange[i]["cashSellingPrice"].toFixed(2) : "N/A"}</td>
+                <td className="text-end">{exchange[i]["ttBuyingPrice"] ? exchange[i]["ttBuyingPrice"].toFixed(2) : "N/A"}</td>
+                <td className="text-end">{exchange[i]["ttSellingPrice"] ? exchange[i]["ttSellingPrice"].toFixed(2) : "N/A"}</td>
+                <td className="text-end">{exchange[i]["usDollarRate"] ? exchange[i]["usDollarRate"].toFixed(3) : "N/A"}</td>
               </tr>
             );
           })

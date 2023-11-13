@@ -10,9 +10,12 @@ function AccountOpen({setUpdate}) {
   const navigate = useNavigate();
 
   return (
+    <div className="AccountOpen borderColor1 p-5"> {/*  */}
+      <h2 className='my-2 fontColor1'>계좌개설</h2>
+      <hr style={{width:'100%'}}/>
     <div className="open">
       <div className="main">
-        <h3>계좌개설</h3>
+        <h3></h3>
         <div className="content">
           <div>
             <h5>어떤 용도로 통장을 사용하실 건가요?</h5>
@@ -126,6 +129,7 @@ function AccountOpen({setUpdate}) {
           <Button variant="success" onClick={() => {navigate('/account')}} style={{height : '40px'}}>취소</Button>
         </div>
       </div>
+    </div>
     </div>
   )
 }

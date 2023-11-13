@@ -53,7 +53,7 @@ function App() {
     <div className="App">
       
       <Header isAuth={isAuth} setAuth={setAuth} setUserInfo={setUserInfo} setUpdate={setUpdate}/>
-      <div className='main d-flex justify-content-center'>
+      <div className='main d-flex justify-content-center align-items-center'>
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/login' element={<Login setAuth={setAuth} setUpdate={setUpdate}/>}/>
