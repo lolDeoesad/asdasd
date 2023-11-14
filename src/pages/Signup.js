@@ -213,7 +213,7 @@ function Signup() {
         <Col className="d-flex align-items-center col-8 mb-3 col-xl-5 mb-xl-0">
           {message.phone ? <span className="error">{message.phone}</span> : <span className="proper">{messageList.default}</span>}
         </Col>
-      </Row>
+      </Row> 
 
       <Row className="row justify-content-center">
         <Col className="col-8 col-xl-auto">

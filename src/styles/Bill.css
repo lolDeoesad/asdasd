@@ -1,0 +1,107 @@
+.bill-container{
+  width: 1000px;
+  height: 80%;
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  
+  margin: 0px 300px 0px 350px;
+  /* justify-content: center;  */
+  
+  /* align-items: center; */
+} 
+
+.bill-middles{
+  width: 1000px;
+  height: 100px;
+}
+
+
+.bill-icon strong{
+  margin-right: 100px;
+}
+
+.bill-container hr{
+  width: 1000px;
+  margin-top: 50px;
+}
+
+.bill-icon{
+  width: 120px;
+  height: 120px;
+  display: flex;
+}
+
+.bill-icon img{
+  margin-right: 100px;
+  width: 80px;
+  height: 80px;
+}
+
+.bill-times{
+  display: flex;
+}
+
+/* .auto-bill{
+  display: flex;
+} */
+
+.bill-bottombox {
+  width: 1000px;
+  height: 150px;
+  /* background-color: #cdcdcd; */
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;  
+  /* text-align: center; */
+}
+
+.bill-bottombox li{
+  /* font-size: 20px; */
+}
+
+.bill-inner{
+  /* margin-left: -50px; */
+  /* text-align: end; */
+  list-style-type: none;
+  
+}
+.bill-inner li{
+  text-align: left;  
+}
+.bill-middlebox{
+  width: 1000px;
+  margin: 150px 0px 50px 0px;
+}
+
+.bill-time{
+  display: grid;
+}
+
+
+#bill-nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #137d34;
+  margin-bottom: 10px;
+}
+
+.bill-nav-inner li {
+  font-weight: lighter;
+  font-size: 12px;
+  /* margin: 0 100px  0 100px; */
+}
+
+.time1{
+  width: 500px;
+  /* display: flex; */
+}
+
+.icons1{
+  width: 120px;
+  height: 120px;
+  /* border-radius: 20px; */
+  transition: transform 0.3s;
+  display: inline;
+  align-items: center;
+  grid-template-columns: repeat(7,1fr);
+  margin-top: 70px;
+}
