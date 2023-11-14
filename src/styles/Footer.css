@@ -1,0 +1,46 @@
+.Footer{
+  border-top: 1px solid #137d34;
+  background-color: white;
+}
+
+.footer-info-text1 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #137d34;
+  width: 400px;
+}
+
+.footer-info-text2 {
+  font-size: 0.75rem;
+}
+
+.footer-info-app {
+  text-align: center;
+  width: 120px;
+  background-color: #137d34;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 5px;
+  font-size: 0.75rem;
+}
+
+.footer-nav > ul > li, .footer-nav > ul > li > a {
+  text-align: left;
+  width: 150px;
+  font-weight: lighter;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.footer-nav > ul > li:first-child {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #137d34;
+  margin-bottom: 10px;
+}
+
+.ect-info{
+  border-top: 1px solid rgb(221, 221, 221);
+  width: 100%;
+}

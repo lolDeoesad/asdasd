@@ -1,0 +1,8 @@
+layout
+footer 에 link 있으면 추가하는 거 확인
+이미지는 logo 제외 asset으로 옮기기 image path constant
+route page 권한 분류 isAuth, role → login page 로 이동
+exchange는 proxy cors 안됨으로 걍 두나무 꺼... 여러번 호출... 분명히 한 번에 호출하는 거도 있을 거 같은데... 쿼리 더 넣으면 되넹... 응. 해결 
+모든 링크는 <Link to="/account" className='me-5'>조회</Link> 형태로!
+
+container width 1600 으로 수정

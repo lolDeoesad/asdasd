@@ -1,0 +1,29 @@
+.Login {
+  width: 600px;
+  height: 500px;
+  border: 1px solid #137d34;
+  border-radius: 30px;
+}
+
+.form-floating{
+  width: 400px;
+}
+
+.login-btn{
+  width: 250px;
+  height: 100px !important;
+}
+
+.Login span{
+  font-size: 1.25rem;
+}
+
+.form-check-input:checked {
+  background-color: #137d34;
+  border-color: #CDEDD7;
+}
+
+
+.form-check {
+  text-align: left;
+}

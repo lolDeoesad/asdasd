@@ -1,0 +1,50 @@
+.map-container{
+  width: 1800px;
+  /* height: 100%; */
+  font-family: 'Nanum Gothic', sans-serif;
+  display: flex;
+}
+
+.map-leftbox{
+  margin-bottom: 100px;
+}
+
+.map-rightbox{
+  width: 1200px;
+  height: 800px;
+  /* border: 1px solid black; */
+  margin: 50px 0px 100px 150px;
+  background-color: #CDEDD7;
+  border-radius: 10px;
+  display: flex;
+}
+
+
+#kakao-map{
+  margin: 50px 0px 0 80px;
+  border-radius: 20px;
+  /* width: 500px;
+  height: 700px;  */
+}
+
+.map-btn{
+  margin: 50px 0 0 10px;
+  font-size: 20px;
+  /* list-style:none; */
+  text-align: center;
+  /* text-decoration: none;   */
+}
+
+
+
+.map-line{
+  width: 150px;
+  margin: 10px 0 5px 0;
+}
+
+/* #mapbox{
+  background-color: #137d34;
+  width: 950px;
+  height: 750px;
+  opacity: 0.8;
+} */

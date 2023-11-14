@@ -1,0 +1,13 @@
+.Header {
+  background : white;
+  border-bottom: 1px solid #137d34;
+}
+
+.Header > .logo-img {
+  height: 100px;
+}
+
+.Header > .header-nav {
+  font-size: 1.25rem;
+}
+

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
+
+.Qna-container{
+  width: 1500px;
+  height: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
+  display: flex;
+}
+
+
+.Qna-rightbox{
+  width: 1000px;
+  height: 100%;
+  /* border: 1px solid black; */
+  margin: 50px 0px 100px 100px;
+} 
+
+.Qna-rightbox h2{
+  text-align: center;
+}
+
+.accoBady{
+  background-color: #F5F5F5;
+}
+
+.Qna-writer strong{
+  text-align: center;
+}
