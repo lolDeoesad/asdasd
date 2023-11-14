@@ -29,21 +29,13 @@ import PleaseWait from './pages/PleaseWait';
 import PlaySudoku from './pages/PlaySudoku';
 import UserUpdate from './pages/UserUpdate';
 import AccountDetail from './pages/AccountDetail';
+import Transaction from './pages/Transaction';
 
 function App() {
   const [isAuth, setAuth] = useState(sessionStorage.getItem('jwt'));
   const [isUpdate, setUpdate] = useState(false);
   const [userInfo, setUserInfo] = useState({ username : '' });
-  const [accountIdx, setAccountIdx] = useState({ idx : 0 });
-  const [accountInfo, setAccountInfo] = useState({
-    id: '',
-    balance: 0,
-    time: '',
-    closedTime: '',
-    transactionList: [],
-    open: ''
-  });
-  const [transactionInfo, setTransaction] = useState({});
+  const [accountInfo, setAccountInfo] = useState({ id: '', transactionList: [] });
 
   useEffect(() => {
     if(isAuth && !isUpdate) {
@@ -54,7 +46,7 @@ function App() {
         })
         .catch(error => setAuth(false));
     }
-  }, [isAuth, isUpdate])
+  }, [isAuth, isUpdate, accountInfo])
   
   return (
     <div className="App">
@@ -69,14 +61,14 @@ function App() {
           <Route path='/user/update' element={<UserUpdate userInfo={userInfo} setUpdate={setUpdate}/>}/>
           <Route path='/user/findIdPw' element={<FindIdPw/>}/>
 
-          <Route path='/user/mypage' element={isAuth? <MyPage userInfo={userInfo}/> : <Invalid/>}/>
+          <Route path='/user/mypage' element={isAuth? <MyPage userInfo={userInfo} setAuth={setAuth} setUpdate={setUpdate}/> : <Invalid/>}/>
           <Route path='/user/approval' element={userInfo.role==="ADMIN" ? <Approval/> : <Invalid/>}/>
-          <Route path='/account' element={isAuth? <AccountList userInfo={userInfo} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo} setAccountIdx={setAccountIdx}/> : <Invalid/>}/>
+          <Route path='/account' element={isAuth? <AccountList userInfo={userInfo} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo}/> : <Invalid/>}/>
           <Route path='/account/detail' element={isAuth? <AccountDetail accountInfo={accountInfo}/> : <Invalid/>}/>
           {/* <Route path='/account/detail' element={isAuth? <AccountSearch/> : <Invalid/>}/> */}
           <Route path='/account/open' element={isAuth? <AccountOpen setUpdate={setUpdate}/> : <Invalid/>}/>
           {/* <Route path='/transaction/:id' element={isAuth? <AccountTransfer userInfo={userInfo}/> : <Invalid/>}/> */}
-          <Route path='/transaction' element={isAuth? <AccountList userInfo={userInfo}/> : <Invalid/>}/>
+          <Route path='/transaction' element={isAuth? <Transaction userInfo={userInfo} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo}/> : <Invalid/>}/>
 
           <Route path='/qna' element={<Qna userInfo={userInfo}/>}/>
           <Route path='/exchange' element={<Exchange/>}/>

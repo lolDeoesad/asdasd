@@ -3,7 +3,7 @@ import AccountListCard from "../components/AccountListCard";
 import AccountOpenCard from "../components/AccountOpenCard";
 import { useState } from "react";
 
-function AccountList({userInfo, setUpdate, setAccountInfo, accountInfo}) {
+function AccountList({userInfo, setUpdate, accountInfo, setAccountInfo}) {
   const accountList = userInfo.accountList;
   const [showOpenAccountOnly, setShowOpenAccountOnly] = useState(true);
 
@@ -20,7 +20,7 @@ function AccountList({userInfo, setUpdate, setAccountInfo, accountInfo}) {
           <AccountOpenCard/>
           {
             accountList && 
-            accountList.map((account, idx) => <AccountListCard account={account} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo} showOpenAccountOnly={showOpenAccountOnly} idx={idx} key={account.id}/>)
+            accountList.map((account, idx) => <AccountListCard account={account} setUpdate={setUpdate} accountInfo={accountInfo} setAccountInfo={setAccountInfo} showOpenAccountOnly={showOpenAccountOnly} key={account.id}/>)
           }
         </Row>
       </Container>

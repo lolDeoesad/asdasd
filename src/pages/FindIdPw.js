@@ -1,6 +1,6 @@
 const FindIdPw = () => {
   return(
-    <div className=''>
+    <div className='FindIdPw'>
     </div>
   )
 }

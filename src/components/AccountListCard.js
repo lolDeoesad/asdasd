@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import { ACCOUNTNAMES, ACCOUNTNUMS, COMMENTS } from '../constants/accountList';
 import axiosInstance from '../utils/axiosInstance';
 
-const AccountListCard = ({account, setUpdate, accountInfo, setAccountInfo, showOpenAccountOnly, idx}) => {
+const AccountListCard = ({account, setUpdate, accountInfo, setAccountInfo, showOpenAccountOnly}) => {
   const randR = Math.floor(Math.random() * 10);
   const randG = Math.floor(Math.random() * 10);
   const randB = Math.floor(Math.random() * 10);
@@ -16,13 +16,16 @@ const AccountListCard = ({account, setUpdate, accountInfo, setAccountInfo, showO
   const navigate = useNavigate();
 
   const getAccount = () => {
-    setAccountInfo({...accountInfo, account});
+    accountInfo.id = account.id;
+    accountInfo.transactionList = [...account.transactionList];
+    setAccountInfo({...accountInfo});
     navigate('/account/detail');
   }
   const postTransaction = (e) => {
     e.stopPropagation();
-    setAccountInfo({...accountInfo, account});
-    // setAccountIdx(idx);
+    accountInfo.id = account.id;
+    accountInfo.transactionList = [...account.transactionList];
+    setAccountInfo({...accountInfo});
     navigate('/transaction');
   }
   const deleteAccount = (e) => {

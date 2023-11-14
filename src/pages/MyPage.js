@@ -10,8 +10,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import MyModal from '../components/MyModal';
+import axiosInstance from '../utils/axiosInstance';
 
-const MyPage = ({ userInfo }) => {
+const MyPage = ({ userInfo, setAuth, setUpdate }) => {
   const [modalShow, setModalShow] = React.useState(false);
 
   // const openModal = () => setIsModalOpen(true);
@@ -60,6 +61,26 @@ const MyPage = ({ userInfo }) => {
                     <div style={{ display: "inline" }}>&nbsp;&nbsp;
                       <Link to='/account/detail' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>계좌목록</span></Link>
                     </div>
+                    {
+                      userInfo.role=="ADMIN"
+                      ?
+                        <div style={{ display: "inline" }}>&nbsp;&nbsp;
+                          <Link to='/user/approval' className='btn btn-outline-success updateBtn'><span style={{ fontSize: "15px" }}>계정승인</span></Link>
+                        </div>
+                      :
+                        <div style={{ display: "inline" }}>&nbsp;&nbsp;
+                          <Link to='/' className='btn btn-outline-success updateBtn' onClick={()=>{
+                            axiosInstance.delete('/user')
+                              .then(response => {
+                                if(response.status === 200) {
+                                  setUpdate(false);
+                                  setAuth(false);
+                                  navigate('/');
+                                }
+                              }).catch(error => console.log(error))
+                          }}><span style={{ fontSize: "15px" }}>회원탈퇴</span></Link>
+                        </div>
+                    }
                   </div>
 
                 </div>

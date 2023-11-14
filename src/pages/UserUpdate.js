@@ -20,7 +20,7 @@ function UserUpdate({userInfo, setUpdate}) {
     agree       : '필수 선택 항목입니다.',
     default     : '사용 가능한 입력입니다.',
     option      : '선택 입력 항목입니다.',
-    old         : '수정할 수 없는 항목입니다.',
+    old         : '수정할 수 없는 항목입니다.'
   };
   const [message, setMessage] = useState({});
   const regExs = {
